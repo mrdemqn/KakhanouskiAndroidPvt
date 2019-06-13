@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:paddingVertical="75dp"
+              tools:context=".pvt.dz0.Dz0MainActivity"
+              tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="50dp">
+
+    <TextView
+            android:text="@string/hello_world"
+            android:id="@+id/helloworld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:paddingEnd="75dp"
+            android:textStyle="bold"
+            android:background="@color/backTextView1"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            tools:ignore="RtlSymmetry"/>
+
+    <TextView
+            android:text="@string/world_hello"
+            android:id="@+id/worldhello"
+            android:textStyle="italic"
+            android:paddingStart="75dp"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/backTextView2"
+            android:textColor="@color/colorPrimaryDark"
+            android:onClick="onClick"
+            tools:ignore="RtlSymmetry"/>
+
+    </LinearLayout>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/buttInversion"
+            android:text="@string/inversion_text"
+            android:textColor="@color/buttColorText"
+            android:id="@+id/buttInversion">
+    </Button>
+
+</LinearLayout>

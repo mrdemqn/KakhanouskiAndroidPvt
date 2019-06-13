@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="buttInversion">#575757</color>
+    <color name="buttColorText">#ffffff</color>
+    <color name="backTextView1">#ffaa0d</color>
+    <color name="backTextView2">#ffffff</color>
 </resources>
