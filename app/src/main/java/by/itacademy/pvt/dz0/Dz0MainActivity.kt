@@ -49,7 +49,8 @@ class Dz0MainActivity : Activity(), View.OnClickListener {
 
         hw?.background = color2
         wh?.background = color1
-        hw?.text = hw1
-        wh?.text = wh2
+
+        hw?.text = wh2
+        wh?.text = hw1
     }
 }
