@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".pvt.dz0.dz1.Dz1MenuActivity"
+>
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_dz"
+            android:contentDescription="@string/todo">
+    </ImageView>
+
+
+
+    <TextView
+            android:id="@+id/oneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dz0"
+            android:textSize="25sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="serif"
+            android:textColor="@android:color/white"
+            android:background="@color/backgroundButton"
+            style="?android:attr/buttonBarButtonStyle"
+    />
+
+    <TextView
+            android:id="@+id/twoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_below="@+id/oneButton"
+            android:layout_marginTop="40dp"
+            android:text="@string/dz1"
+            android:textSize="25sp"
+            android:fontFamily="serif"
+            android:textColor="@android:color/white"
+            android:background="@color/backgroundButton"
+            style="?android:attr/buttonBarButtonStyle"
+    />
+</RelativeLayout>

@@ -7,4 +7,11 @@
     <color name="buttColorText">#ffffff</color>
     <color name="backTextView1">#ffaa0d</color>
     <color name="backTextView2">#ffffff</color>
+    <color name="backgroundButton">#3F3F40</color>
+    <color name="colorFlagColumbiaTop">#FCD116</color>
+    <color name="colorFlagColumbiaCenter">#003893</color>
+    <color name="colorFlagColumbiaBottom">#CE1126</color>
+    <color name="colorFlagTailandRed">#A51931</color>
+    <color name="colorFlagTailandWhite">#F4F5F8</color>
+    <color name="colorFlagTailandBlue">#2D2A4A</color>
 </resources>

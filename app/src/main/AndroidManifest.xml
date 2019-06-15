@@ -11,11 +11,16 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".pvt.dz0.Dz0MainActivity">
+        <activity android:name=".pvt.dz0.dz0.Dz0MainActivity">
+        </activity>
+        <activity android:name=".pvt.dz0.dz1.Dz1MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".pvt.dz0.dz1.Dz1FlagsActivity">
         </activity>
     </application>
 
