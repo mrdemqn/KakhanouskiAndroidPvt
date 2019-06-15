@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:gravity="center_horizontal"
               android:paddingVertical="75dp"
-              tools:context=".pvt.dz0.dz0.Dz0MainActivity"
+              tools:context=".pvt.dz0.Dz0MainActivity"
               tools:ignore="UnusedAttribute">
 
     <LinearLayout
@@ -16,8 +16,8 @@
             android:layout_marginBottom="50dp">
 
     <TextView
-            android:text="@string/hello_world"
-            android:id="@+id/helloWorldTextView"
+            android:text="@string/helloWorldTextView"
+            android:id="@+id/helloworld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
@@ -30,8 +30,8 @@
             tools:ignore="RtlSymmetry"/>
 
     <TextView
-            android:text="@string/world_hello"
-            android:id="@+id/worldHelloTextView"
+            android:text="@string/worldHelloTextView"
+            android:id="@+id/worldhello"
             android:textStyle="italic"
             android:paddingStart="75dp"
             android:textSize="25sp"
