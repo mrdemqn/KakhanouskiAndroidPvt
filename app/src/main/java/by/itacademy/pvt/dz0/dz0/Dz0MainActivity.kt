@@ -10,7 +10,6 @@ import by.itacademy.R
 
 class Dz0MainActivity : Activity(), View.OnClickListener {
 
-
     private var helloWorldTextView: TextView? = null
     private var worldHelloTextView: TextView? = null
 
@@ -35,7 +34,7 @@ class Dz0MainActivity : Activity(), View.OnClickListener {
         inversion()
     }
 
-    fun inversion() {
+   private fun inversion() {
 
         val helloWorld1TextView = helloWorldTextView?.text.toString()
         val worldHello2TextView = worldHelloTextView?.text.toString()
