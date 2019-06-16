@@ -5,9 +5,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".pvt.dz0.dz1.Dz1MenuActivity"
->
-
+              tools:context=".pvt.dz0.dz1.Dz1MenuActivity">
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -15,9 +13,6 @@
             android:src="@drawable/back_dz"
             android:contentDescription="@string/todo">
     </ImageView>
-
-
-
     <TextView
             android:id="@+id/oneButton"
             android:layout_width="wrap_content"
@@ -29,9 +24,7 @@
             android:fontFamily="serif"
             android:textColor="@android:color/white"
             android:background="@color/backgroundButton"
-            style="?android:attr/buttonBarButtonStyle"
-    />
-
+            style="?android:attr/buttonBarButtonStyle"/>
     <TextView
             android:id="@+id/twoButton"
             android:layout_width="wrap_content"
@@ -44,6 +37,5 @@
             android:fontFamily="serif"
             android:textColor="@android:color/white"
             android:background="@color/backgroundButton"
-            style="?android:attr/buttonBarButtonStyle"
-    />
+            style="?android:attr/buttonBarButtonStyle"/>
 </RelativeLayout>
