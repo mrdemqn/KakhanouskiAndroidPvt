@@ -9,7 +9,5 @@ class Dz1FlagsActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz1_flags)
-
-
     }
 }
