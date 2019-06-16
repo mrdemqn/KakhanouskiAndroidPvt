@@ -34,8 +34,3 @@ class Dz1MenuActivity : Activity() {
         startActivity(intent)
     }
 }
-
-
-
-
-
