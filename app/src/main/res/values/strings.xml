@@ -3,4 +3,7 @@
     <string name="world_hello">World Hello</string>
     <string name="hello_world">Hello World</string>
     <string name="inversion_text">Inversion</string>
+    <string name="dz0">ДЗ№0</string>
+    <string name="dz1">ДЗ№1</string>
+    <string name="todo">TODO</string>
 </resources>
