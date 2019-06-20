@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/login_bg" />
+        android:src="@drawable/login_bg"/>
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -32,7 +32,7 @@
         android:background="@color/backLoginOpacityEditText"
         android:drawableStart="@drawable/ic_login_name"
         android:imeOptions="actionNext"
-        android:inputType="text" />
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/twoEditText"

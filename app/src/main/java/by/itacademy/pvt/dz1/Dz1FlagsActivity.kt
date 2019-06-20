@@ -2,7 +2,7 @@ package by.itacademy.pvt.dz1
 
 import android.app.Activity
 import android.os.Bundle
-import by.itacademy.R
+import by.itacademy.pvt.R
 
 class Dz1FlagsActivity : Activity() {
 
