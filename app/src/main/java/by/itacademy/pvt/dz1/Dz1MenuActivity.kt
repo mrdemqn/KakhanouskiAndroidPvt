@@ -1,11 +1,11 @@
-package by.itacademy.pvt.dz0.dz1
+package by.itacademy.pvt.dz1
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import by.itacademy.R
-import by.itacademy.pvt.dz0.dz0.Dz0MainActivity
+import by.itacademy.pvt.dz0.Dz0MainActivity
 
 class Dz1MenuActivity : Activity() {
 
