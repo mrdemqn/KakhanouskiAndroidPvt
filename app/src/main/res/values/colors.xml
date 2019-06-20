@@ -8,10 +8,15 @@
     <color name="backTextView1">#ffaa0d</color>
     <color name="backTextView2">#ffffff</color>
     <color name="backgroundButton">#3F3F40</color>
-    <color name="colorFlagColumbiaTop">#FCD116</color>
-    <color name="colorFlagColumbiaCenter">#003893</color>
-    <color name="colorFlagColumbiaBottom">#CE1126</color>
-    <color name="colorFlagTailandRed">#A51931</color>
-    <color name="colorFlagTailandWhite">#F4F5F8</color>
-    <color name="colorFlagTailandBlue">#2D2A4A</color>
+    <color name="flagColumbiaTop">#FCD116</color>
+    <color name="flagColumbiaCenter">#003893</color>
+    <color name="flagColumbiaBottom">#CE1126</color>
+    <color name="flagTailandRed">#A51931</color>
+    <color name="flagTailandWhite">#F4F5F8</color>
+    <color name="flagTailandBlue">#2D2A4A</color>
+    <color name="backAvatarImageView">#00FFFFFF</color>
+    <color name="profileDataTextView">#ffffff</color>
+    <color name="fieldsTextView">#d4d3d3</color>
+    <color name="infFieldsTextView">#d45807</color>
+
 </resources>

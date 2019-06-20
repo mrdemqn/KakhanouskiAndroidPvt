@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="by.itacademy">
-
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
     <application
+            android:usesCleartextTraffic="true"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -12,8 +14,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".pvt.dz0.dz0.Dz0MainActivity"/>
-        <activity android:name=".pvt.dz0.dz1.Dz1MenuActivity"/>
-              </activity>
+        <activity android:name=".pvt.dz0.dz3.Dz3Activity"/>
+              <activity android:name=".pvt.dz0.dz1.Dz1MenuActivity"
+                        android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

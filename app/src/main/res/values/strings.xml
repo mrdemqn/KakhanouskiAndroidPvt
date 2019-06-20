@@ -6,4 +6,27 @@
     <string name="dz0">ДЗ№0</string>
     <string name="dz1">ДЗ№1</string>
     <string name="todo">TODO</string>
+    <string name="dzmitry_kakhanouski">Dzmitry Kakhanouski</string>
+    <string name="trophies">Trophies</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="trophies_value">4</string>
+    <string name="following_value">54</string>
+    <string name="followers_value">12</string>
+    <string name="name">Name</string>
+    <string name="country">Country</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="height">Height</string>
+    <string name="phone">Phone</string>
+    <string name="name_parametr">Nial Brockman</string>
+    <string name="country_parametr">RB</string>
+    <string name="postal_code_parametr">220018</string>
+    <string name="date_of_birth_parametr">Feb. 21, 1995</string>
+    <string name="gender_parametr">Male</string>
+    <string name="height_parametr">185 cm</string>
+    <string name="phone_parametr">(29) 555-55-55</string>
+    <string name="dz3_activity">ДЗ№3</string>
+    <string name="dz2_activity">ДЗ№2</string>
 </resources>
