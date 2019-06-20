@@ -23,7 +23,6 @@ class Dz2Activity : Activity() {
                 loadImage()
             }
     }
-
     private fun loadImage() {
         progressBar.visibility = ProgressBar.VISIBLE
         Picasso.get()
@@ -33,7 +32,6 @@ class Dz2Activity : Activity() {
                 override fun onSuccess() {
                     progressBar.visibility = ProgressBar.GONE
                 }
-
                 override fun onError(e: Exception?) {
                 }
             })
