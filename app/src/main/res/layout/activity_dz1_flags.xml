@@ -109,7 +109,7 @@
             android:paddingBottom="14dp"
             android:layout_below="@+id/sevenTextView"
             android:layout_marginTop="5dp"
-            android:background="@color/colorFlagColumbiaTop"/>
+            android:background="@color/flagColumbiaTop"/>
 
     <TextView
             android:id="@+id/elevenTextView"
@@ -118,7 +118,7 @@
             android:layout_below="@+id/tenTextView"
             android:paddingStart="50dp"
             android:paddingEnd="50dp"
-            android:background="@color/colorFlagColumbiaCenter"/>
+            android:background="@color/flagColumbiaCenter"/>
 
     <TextView
             android:id="@+id/twelveTextView"
@@ -127,7 +127,7 @@
             android:layout_below="@+id/elevenTextView"
             android:paddingStart="50dp"
             android:paddingEnd="50dp"
-            android:background="@color/colorFlagColumbiaBottom"/>
+            android:background="@color/flagColumbiaBottom"/>
 
     <TextView
             android:id="@+id/thirteenTextView"
@@ -238,35 +238,35 @@
 
         <TextView
                 android:id="@+id/eightteenTextView"
-                android:background="@color/colorFlagTailandRed"
+                android:background="@color/flagTailandRed"
                 android:layout_width="wrap_content"
                 android:paddingStart="70dp"
                 android:paddingEnd="50dp"
                 android:layout_height="wrap_content"/>
         <TextView
                 android:id="@+id/nineteenTextView"
-                android:background="@color/colorFlagTailandWhite"
+                android:background="@color/flagTailandWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="70dp"
                 android:paddingEnd="50dp"/>
         <TextView
                 android:id="@+id/twentyTextView"
-                android:background="@color/colorFlagTailandBlue"
+                android:background="@color/flagTailandBlue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="70dp"
                 android:paddingEnd="50dp"/>
         <TextView
                 android:id="@+id/twentyOneTextView"
-                android:background="@color/colorFlagTailandWhite"
+                android:background="@color/flagTailandWhite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="70dp"
                 android:paddingEnd="50dp"/>
         <TextView
                 android:id="@+id/twentyTwoTextView"
-                android:background="@color/colorFlagTailandRed"
+                android:background="@color/flagTailandRed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="70dp"

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Android Project Kakhanouski</string>
-    <string name="world_hello">World Hello</string>
-    <string name="hello_world">Hello World</string>
+    <string name="worldHelloTextView">World Hello</string>
+    <string name="helloWorldTextView">Hello World</string>
     <string name="inversion_text">Inversion</string>
     <string name="dz0">ДЗ№0</string>
     <string name="dz1">ДЗ№1</string>

@@ -23,7 +23,7 @@ class Dz0MainActivity : Activity(), View.OnClickListener {
         helloWorldTextView = findViewById(R.id.helloWorldTextView)
         worldHelloTextView = findViewById(R.id.worldHelloTextView)
 
-        helloWorldTextView?.setText(R.string.hello_world)
+        helloWorldTextView?.setText(R.string.helloWorldTextView)
 
         helloWorldTextView?.setOnClickListener {inversion()}
 
