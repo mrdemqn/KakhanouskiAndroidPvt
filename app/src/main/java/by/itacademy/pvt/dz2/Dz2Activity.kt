@@ -16,7 +16,6 @@ class Dz2Activity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz2)
-        findViewById<Button>(R.id.loadImageButton)
         progressBar = findViewById(R.id.oneProgressBar)
         findViewById<Button>(R.id.loadImageButton)
             .setOnClickListener {
@@ -27,12 +26,14 @@ class Dz2Activity : Activity() {
         progressBar.visibility = ProgressBar.VISIBLE
         Picasso.get()
             .load("https://avatars.mds.yandex.net/get-pdb/964669/92f6c91e-4003-4b9c-abe8-88b5f0b2e96d/orig")
+            .error(R.drawable.error_image)
             .transform(CropCircleTransformation())
             .into(loadImageView, object : Callback {
                 override fun onSuccess() {
                     progressBar.visibility = ProgressBar.GONE
                 }
                 override fun onError(e: Exception?) {
+                    progressBar.visibility = ProgressBar.GONE
                 }
             })
     }
