@@ -1,41 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
- xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              tools:context=".pvt.dz0.dz1.Dz1MenuActivity">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/back_dz"
-            android:contentDescription="@string/todo">
+            android:src="@drawable/back_dz">
     </ImageView>
     <TextView
             android:id="@+id/oneButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/dz0"
-            android:textSize="25sp"
-            android:layout_marginTop="50dp"
-            android:layout_marginStart="20dp"
-            android:fontFamily="serif"
-            android:textColor="@android:color/white"
-            android:background="@color/backgroundButton"
-            style="?android:attr/buttonBarButtonStyle"/>
+            style="@style/MenuNavigationTextView"/>
     <TextView
             android:id="@+id/twoButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_below="@+id/oneButton"
-            android:layout_marginTop="40dp"
             android:text="@string/dz1"
-            android:textSize="25sp"
-            android:fontFamily="serif"
-            android:textColor="@android:color/white"
-            android:background="@color/backgroundButton"
-            style="?android:attr/buttonBarButtonStyle"/>
+            android:layout_below="@+id/oneButton"
+            style="@style/MenuNavigationTextView"/>
+    <TextView
+            android:id="@+id/threeButton"
+            android:layout_below="@+id/twoButton"
+            android:text="@string/dz2_activity"
+            style="@style/MenuNavigationTextView"/>
+    <TextView
+            android:id="@+id/fourButton"
+            android:layout_below="@+id/threeButton"
+            android:text="@string/dz3_activity"
+            style="@style/MenuNavigationTextView"/>
 </RelativeLayout>

@@ -29,4 +29,6 @@
     <string name="phone_parametr">(29) 555-55-55</string>
     <string name="dz3_activity">ДЗ№3</string>
     <string name="dz2_activity">ДЗ№2</string>
+    <string name="username">Username</string>
+
 </resources>

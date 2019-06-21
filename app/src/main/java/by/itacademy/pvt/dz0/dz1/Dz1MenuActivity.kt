@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import by.itacademy.R
 import by.itacademy.pvt.dz0.dz0.Dz0MainActivity
+import by.itacademy.pvt.dz0.dz3.Dz3Activity
 
 class Dz1MenuActivity : Activity() {
 
@@ -22,6 +23,16 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz1()
             }
+
+        findViewById<View>(R.id.twoButton)
+            .setOnClickListener {
+                viewDz2()
+            }
+
+        findViewById<View>(R.id.fourButton)
+            .setOnClickListener {
+                viewDz3()
+            }
     }
 
     private fun viewDz0() {
@@ -31,6 +42,14 @@ class Dz1MenuActivity : Activity() {
 
     private fun viewDz1() {
         val intent = Intent(this, Dz1FlagsActivity::class.java)
+        startActivity(intent)
+    }
+    private fun viewDz2() {
+        val intent = Intent(this, Dz1FlagsActivity::class.java)
+        startActivity(intent)
+    }
+    private fun viewDz3() {
+        val intent = Intent(this, Dz3Activity::class.java)
         startActivity(intent)
     }
 }

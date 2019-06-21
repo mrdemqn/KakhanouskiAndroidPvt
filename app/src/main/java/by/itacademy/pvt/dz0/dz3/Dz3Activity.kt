@@ -2,6 +2,7 @@ package by.itacademy.pvt.dz0.dz3
 
 import android.app.Activity
 import android.os.Bundle
+import android.widget.Button
 import by.itacademy.R
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
