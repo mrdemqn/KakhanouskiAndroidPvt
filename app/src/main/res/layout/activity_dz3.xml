@@ -27,10 +27,10 @@
 
             <ImageView
                     android:id="@+id/loadAvatarImageView"
-                    android:background="@color/backAvatarImageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
+                    android:background="@drawable/border_shape"
+                    android:padding="@dimen/border_avatar_width"
+                    android:layout_width="@dimen/diam_avatar"
+                    android:layout_height="@dimen/diam_avatar"
             />
 
             <TextView
