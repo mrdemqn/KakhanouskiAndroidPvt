@@ -14,4 +14,9 @@
     <color name="colorFlagTailandRed">#A51931</color>
     <color name="colorFlagTailandWhite">#F4F5F8</color>
     <color name="colorFlagTailandBlue">#2D2A4A</color>
+    <color name="colorMainBackground">#A8A8A8</color>
+    <color name="backLoginOpacityEditText">#29FFFFFF</color>
+    <color name="backLogIn">#51a5bf</color>
+    <color name="colorButton">#A55B73</color>
+    <color name="backCreateAcc">#b8a77f</color>
 </resources>

@@ -6,4 +6,13 @@
     <string name="dz0">ДЗ№0</string>
     <string name="dz1">ДЗ№1</string>
     <string name="todo">TODO</string>
+    <string name="hello">Hello</string>
+    <string name="log_in">LOG IN</string>
+    <string name="forgot_button"><u>Forgot your username/password?</u></string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="dz2">ДЗ№2</string>
+    <string name="url_adress_hint">Введите URL-адрес изображения</string>
+    <string name="load_image_button">Загрузить картунку</string>
 </resources>
