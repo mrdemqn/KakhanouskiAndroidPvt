@@ -22,7 +22,7 @@ class Dz0MainActivity : Activity(), View.OnClickListener {
         helloWorldTextView = findViewById(R.id.helloWorldTextView)
         worldHelloTextView = findViewById(R.id.worldHelloTextView)
 
-        helloWorldTextView?.setText(R.string.hello_world)
+        helloWorldTextView?.setText(R.string.helloWorldTextView)
 
         helloWorldTextView?.setOnClickListener { inversion() }
 
@@ -35,8 +35,8 @@ class Dz0MainActivity : Activity(), View.OnClickListener {
 
     private fun inversion() {
 
-        val helloWorld1TextView = helloWorldTextView?.text.toString()
-        val worldHello2TextView = worldHelloTextView?.text.toString()
+        val helloWorld1TextView = helloWorldTextView?.text
+        val worldHello2TextView = worldHelloTextView?.text
 
         val color1 = helloWorldTextView?.background
         val color2 = worldHelloTextView?.background

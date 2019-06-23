@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/back_dz">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_dz">
     </ImageView>
     <TextView
-            android:id="@+id/oneButton"
-            android:text="@string/dz0"
-            style="@style/MenuNavigationTextView"/>
+        android:id="@+id/oneButton"
+        android:text="@string/dz0"
+        style="@style/MenuNavigationTextView"/>
     <TextView
-            android:id="@+id/twoButton"
-            android:text="@string/dz1"
-            android:layout_below="@+id/oneButton"
-            style="@style/MenuNavigationTextView"/>
+        android:id="@+id/twoButton"
+        android:text="@string/dz1"
+        android:layout_below="@+id/oneButton"
+        style="@style/MenuNavigationTextView"/>
     <TextView
-            android:id="@+id/threeButton"
-            android:layout_below="@+id/twoButton"
-            android:text="@string/dz2"
-            style="@style/MenuNavigationTextView"/>
+        android:id="@+id/threeButton"
+        android:layout_below="@+id/twoButton"
+        android:text="@string/dz2_activity"
+        style="@style/MenuNavigationTextView"/>
+    <TextView
+        android:id="@+id/fourButton"
+        android:layout_below="@+id/threeButton"
+        android:text="@string/dz3_activity"
+        style="@style/MenuNavigationTextView"/>
 </RelativeLayout>

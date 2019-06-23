@@ -15,7 +15,7 @@
             android:layout_marginBottom="50dp">
 
     <TextView
-            android:text="@string/hello_world"
+            android:text="@string/helloWorldTextView"
             android:id="@+id/helloWorldTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             tools:ignore="RtlSymmetry"/>
 
     <TextView
-            android:text="@string/world_hello"
+            android:text="@string/worldHelloTextView"
             android:id="@+id/worldHelloTextView"
             android:textStyle="italic"
             android:paddingStart="75dp"

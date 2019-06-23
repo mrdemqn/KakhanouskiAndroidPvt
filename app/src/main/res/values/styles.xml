@@ -13,7 +13,7 @@
         <item name="android:drawablePadding">10dp</item>
         <item name="android:background">@color/backLoginOpacityEditText</item>
         <item name="android:maxLines">1</item>
-        <item name="android:fontFamily">@font/monda_regular</item>
+        <item name="android:fontFamily">@fonts/monda_regular</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:textColorHint">@android:color/white</item>
@@ -32,6 +32,26 @@
         <item name="android:background">@color/backgroundButton</item>
         <item name="android:paddingBottom">10dp</item>
         <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="DataTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/fieldsTextView</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_weight">1</item>
+
+    </style>
+    <style name="InfTextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/profileDataTextView</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginStart">100dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
 </resources>
