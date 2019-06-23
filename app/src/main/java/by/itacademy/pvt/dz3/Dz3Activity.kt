@@ -1,14 +1,11 @@
-package by.itacademy.pvt.dz0.dz3
+package by.itacademy.pvt.dz3
 
 import android.app.Activity
 import android.os.Bundle
-import android.widget.Button
 import by.itacademy.R
-import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import kotlinx.android.synthetic.main.activity_dz3.*
-import java.lang.Exception
 
 class Dz3Activity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
