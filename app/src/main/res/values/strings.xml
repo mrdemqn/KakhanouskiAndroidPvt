@@ -30,5 +30,10 @@
     <string name="dz3_activity">ДЗ№3</string>
     <string name="dz2_activity">ДЗ№2</string>
     <string name="username">Username</string>
-
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="dz2_forgot"><u>Forgot your username/password?</u></string>
+    <string name="dz_2_create_account">Create Account</string>
+    <string name="url_adress_hint">Введите URL-адрес</string>
+    <string name="load_image_button">Загрузить картинку</string>
 </resources>

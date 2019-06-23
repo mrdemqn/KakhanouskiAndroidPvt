@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import by.itacademy.R
-
+import by.itacademy.pvt.R
 
 class Dz0MainActivity : Activity(), View.OnClickListener {
 
-private var helloWorldTextView: TextView? = null
+    private var helloWorldTextView: TextView? = null
     private var worldHelloTextView: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,19 +24,19 @@ private var helloWorldTextView: TextView? = null
 
         helloWorldTextView?.setText(R.string.helloWorldTextView)
 
-        helloWorldTextView?.setOnClickListener {inversion()}
+        helloWorldTextView?.setOnClickListener { inversion() }
 
-        worldHelloTextView?.setOnClickListener{ inversion() }
+        worldHelloTextView?.setOnClickListener { inversion() }
     }
 
     override fun onClick(v: View) {
         inversion()
     }
 
-    fun inversion() {
+    private fun inversion() {
 
-        val helloWorld1TextView = helloWorldTextView?.text.toString()
-        val worldHello2TextView = worldHelloTextView?.text.toString()
+        val helloWorld1TextView = helloWorldTextView?.text
+        val worldHello2TextView = worldHelloTextView?.text
 
         val color1 = helloWorldTextView?.background
         val color2 = worldHelloTextView?.background
@@ -47,5 +46,5 @@ private var helloWorldTextView: TextView? = null
 
         helloWorldTextView?.text = worldHello2TextView
         worldHelloTextView?.text = helloWorld1TextView
-    }
+        }
 }

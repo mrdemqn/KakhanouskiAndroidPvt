@@ -5,9 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center_horizontal"
-              android:paddingVertical="75dp"
-              tools:context=".pvt.dz0.dz0.Dz0MainActivity"
-              tools:ignore="UnusedAttribute">
+              android:paddingVertical="75dp">
 
     <LinearLayout
             android:layout_width="wrap_content"
