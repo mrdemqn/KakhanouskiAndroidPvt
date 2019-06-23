@@ -2,7 +2,7 @@ package by.itacademy.pvt.dz3
 
 import android.app.Activity
 import android.os.Bundle
-import by.itacademy.R
+import by.itacademy.pvt.R
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import kotlinx.android.synthetic.main.activity_dz3.*
