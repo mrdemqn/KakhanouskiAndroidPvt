@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/bellImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_notifications_black_24dp"
+            android:tint="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/avatarLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bellImageView"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp">
+
+            <ImageView
+                android:id="@+id/loadAvatarImageView"
+                android:layout_width="@dimen/diam_avatar"
+                android:layout_height="@dimen/diam_avatar"
+                android:background="@drawable/border_shape"
+                android:padding="@dimen/border_avatar_width" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="45dp"
+                android:text="@string/dzmitry_kakhanouski"
+                android:textColor="@color/profileDataTextView"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fieldsTextLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avatarLinearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fieldOneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trophies"
+                android:textAllCaps="true"
+                android:textColor="@color/fieldsTextView" />
+
+            <TextView
+                android:id="@+id/fieldTwoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/following"
+                android:textAllCaps="true"
+                android:textColor="@color/fieldsTextView" />
+
+            <TextView
+                android:id="@+id/fieldThreeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/followers"
+                android:textAllCaps="true"
+                android:textColor="@color/fieldsTextView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/infFieldsTextLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fieldsTextLinearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/infFieldOneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trophies_value"
+                android:textColor="@color/infFieldsTextView" />
+
+            <TextView
+                android:id="@+id/infFieldTwoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="115dp"
+                android:text="@string/following_value"
+                android:textColor="@color/infFieldsTextView" />
+
+            <TextView
+                android:id="@+id/infFieldThreeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="115dp"
+                android:text="@string/followers_value"
+                android:textColor="@color/infFieldsTextView" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/infFieldsTextLinearLayout"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/fieldsTextView" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/lineView">
+
+            <LinearLayout
+                android:id="@+id/nameLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/oneDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/oneInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/name_parametr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/countryLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/twoDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/country" />
+
+                <TextView
+                    android:id="@+id/twoInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/country_parametr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/postalCodeLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/threeDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/postal_code" />
+
+                <TextView
+                    android:id="@+id/threeInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/postal_code_parametr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dateBirthLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/fourDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/date_of_birth" />
+
+                <TextView
+                    android:id="@+id/fourInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/date_of_birth_parametr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/genderLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/fiveDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/gender" />
+
+                <TextView
+                    android:id="@+id/fiveInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/gender_parametr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/heightLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/sixDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/height" />
+
+                <TextView
+                    android:id="@+id/sixInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/height_parametr" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phoneLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:gravity="center_horizontal|start"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/sevenDataTextView"
+                    style="@style/DataTextView"
+                    android:text="@string/phone" />
+
+                <TextView
+                    android:id="@+id/sevenInfTextView"
+                    style="@style/InfTextView"
+                    android:text="@string/phone_parametr" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

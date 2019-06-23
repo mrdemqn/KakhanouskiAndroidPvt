@@ -1,274 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
     <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/back_dz"
-                android:contentDescription="@string/todo">
-        </ImageView>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_dz"/>
 
         <TextView
-                android:id="@+id/oneTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/holo_red_light"
-                android:layout_marginTop="5dp"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"/>
+            android:id="@+id/oneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_red_light"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp" />
 
         <TextView
-                android:id="@+id/twoTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/oneTextView"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:background="@android:color/white"/>
+            android:id="@+id/twoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oneTextView"
+            android:background="@android:color/white"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp" />
 
         <TextView
-                android:id="@+id/threeTextView"
-                android:layout_below="@+id/twoTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:background="@android:color/holo_red_light"/>
+            android:id="@+id/threeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/twoTextView"
+            android:background="@android:color/holo_red_light"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp" />
 
         <TextView
-                android:id="@+id/fourTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/threeTextView"
-                android:layout_marginTop="5dp"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:paddingBottom="10dp"
-                android:background="@android:color/white"/>
+            android:id="@+id/fourTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/threeTextView"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:paddingBottom="10dp" />
 
         <TextView
-                android:id="@+id/fiveTextView"
-                android:layout_below="@+id/fourTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:paddingBottom="10dp"
-                android:background="@android:color/holo_red_light"/>
+            android:id="@+id/fiveTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fourTextView"
+            android:background="@android:color/holo_red_light"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:paddingBottom="10dp" />
 
         <TextView
-                android:id="@+id/sixTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="15dp"
-                android:paddingEnd="17dp"
-                android:paddingBottom="40dp"
-                android:layout_below="@+id/fiveTextView"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/holo_green_dark"/>
+            android:id="@+id/sixTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fiveTextView"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/holo_green_dark"
+            android:paddingStart="15dp"
+            android:paddingEnd="17dp"
+            android:paddingBottom="40dp" />
 
         <TextView
-                android:id="@+id/sevenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/sixTextView"
-                android:layout_below="@+id/fiveTextView"
-                android:layout_marginTop="5dp"
-                android:paddingStart="17dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="40dp"
-                android:background="@android:color/white"/>
+            android:id="@+id/sevenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fiveTextView"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/sixTextView"
+            android:background="@android:color/white"
+            android:paddingStart="17dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="40dp" />
 
         <TextView
-                android:id="@+id/eightTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/fiveTextView"
-                android:layout_toEndOf="@+id/sevenTextView"
-                android:paddingStart="17dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/holo_red_dark"/>
+            android:id="@+id/eightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fiveTextView"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/sevenTextView"
+            android:background="@android:color/holo_red_dark"
+            android:paddingStart="17dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="40dp" />
 
         <TextView
-                android:id="@+id/tenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:paddingBottom="14dp"
-                android:layout_below="@+id/sevenTextView"
-                android:layout_marginTop="5dp"
-                android:background="@color/flagColumbiaTop"/>
+            android:id="@+id/tenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sevenTextView"
+            android:layout_marginTop="5dp"
+            android:background="@color/flagColumbiaTop"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:paddingBottom="14dp" />
 
         <TextView
-                android:id="@+id/elevenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tenTextView"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:background="@color/flagColumbiaCenter"/>
+            android:id="@+id/elevenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tenTextView"
+            android:background="@color/flagColumbiaCenter"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp" />
 
         <TextView
-                android:id="@+id/twelveTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/elevenTextView"
-                android:paddingStart="50dp"
-                android:paddingEnd="50dp"
-                android:background="@color/flagColumbiaBottom"/>
+            android:id="@+id/twelveTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/elevenTextView"
+            android:background="@color/flagColumbiaBottom"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp" />
 
         <TextView
-                android:id="@+id/thirteenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="15dp"
-                android:paddingEnd="17dp"
-                android:paddingBottom="50dp"
-                android:layout_below="@+id/twelveTextView"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/white"/>
+            android:id="@+id/thirteenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/twelveTextView"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white"
+            android:paddingStart="15dp"
+            android:paddingEnd="17dp"
+            android:paddingBottom="50dp" />
 
         <TextView
-                android:id="@+id/fourteenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/thirteenTextView"
-                android:layout_below="@+id/twelveTextView"
-                android:layout_marginTop="5dp"
-                android:paddingStart="45dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="15dp"
-                android:background="@android:color/holo_red_light"/>
+            android:id="@+id/fourteenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/twelveTextView"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/thirteenTextView"
+            android:background="@android:color/holo_red_light"
+            android:paddingStart="45dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="15dp" />
 
         <TextView
-                android:id="@+id/fifteenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/thirteenTextView"
-                android:layout_below="@+id/fourteenTextView"
-                android:paddingStart="45dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="15dp"
-                android:background="@android:color/holo_green_dark"/>
+            android:id="@+id/fifteenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fourteenTextView"
+            android:layout_toEndOf="@+id/thirteenTextView"
+            android:background="@android:color/holo_green_dark"
+            android:paddingStart="45dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="15dp" />
 
         <RelativeLayout
-                android:id="@+id/oneRelativeLayout"
-                android:layout_toEndOf="@+id/fourTextView"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="50dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <TextView
-                    android:id="@+id/twentyThreeTextView"
-                    android:background="@android:color/holo_red_dark"
-                    android:layout_width="wrap_content"
-                    android:paddingStart="30dp"
-                    android:paddingEnd="30dp"
-                    android:paddingBottom="30dp"
-                    android:layout_height="wrap_content"/>
-            <TextView
-                    android:id="@+id/twentyFourTextView"
-                    android:background="@android:color/white"
-                    android:layout_toEndOf="@+id/twentyThreeTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:paddingBottom="98dp"/>
-            <TextView
-                    android:id="@+id/twentyFiveTextView"
-                    android:background="@android:color/white"
-                    android:layout_below="@+id/twentyThreeTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="90dp"
-                    android:paddingEnd="90dp"/>
-            <TextView
-                    android:id="@+id/twentySixTextView"
-                    android:background="@android:color/holo_red_dark"
-                    android:layout_below="@+id/twentyFiveTextView"
-                    android:layout_width="wrap_content"
-                    android:paddingStart="30dp"
-                    android:paddingEnd="30dp"
-                    android:paddingBottom="30dp"
-                    android:layout_height="wrap_content"/>
-            <TextView
-                    android:id="@+id/twentySevenTextView"
-                    android:background="@android:color/holo_red_dark"
-                    android:layout_below="@+id/twentyFiveTextView"
-                    android:layout_toEndOf="@+id/twentyFourTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="50dp"
-                    android:paddingEnd="40dp"
-                    android:paddingBottom="30dp"/>
-            <TextView
-                    android:id="@+id/twentyEightTextView"
-                    android:background="@android:color/holo_red_dark"
-                    android:layout_above="@+id/twentyFiveTextView"
-                    android:layout_toEndOf="@+id/twentyFourTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="50dp"
-                    android:paddingEnd="40dp"
-                    android:paddingBottom="30dp"/>
+            android:id="@+id/oneRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/fourTextView">
 
-        </RelativeLayout>
-        <LinearLayout
-                android:id="@+id/oneLinearLayout"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
+            <TextView
+                android:id="@+id/twentyThreeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/fifteenTextView">
+                android:background="@android:color/holo_red_dark"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="30dp" />
 
             <TextView
-                    android:id="@+id/eightteenTextView"
-                    android:background="@color/flagTailandRed"
-                    android:layout_width="wrap_content"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="50dp"
-                    android:layout_height="wrap_content"/>
+                android:id="@+id/twentyFourTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/twentyThreeTextView"
+                android:background="@android:color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="98dp" />
+
             <TextView
-                    android:id="@+id/nineteenTextView"
-                    android:background="@color/flagTailandWhite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="50dp"/>
+                android:id="@+id/twentyFiveTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/twentyThreeTextView"
+                android:background="@android:color/white"
+                android:paddingStart="90dp"
+                android:paddingEnd="90dp" />
+
             <TextView
-                    android:id="@+id/twentyTextView"
-                    android:background="@color/flagTailandBlue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="50dp"/>
+                android:id="@+id/twentySixTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/twentyFiveTextView"
+                android:background="@android:color/holo_red_dark"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="30dp" />
+
             <TextView
-                    android:id="@+id/twentyOneTextView"
-                    android:background="@color/flagTailandWhite"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="50dp"/>
+                android:id="@+id/twentySevenTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/twentyFiveTextView"
+                android:layout_toEndOf="@+id/twentyFourTextView"
+                android:background="@android:color/holo_red_dark"
+                android:paddingStart="50dp"
+                android:paddingEnd="40dp"
+                android:paddingBottom="30dp" />
+
             <TextView
-                    android:id="@+id/twentyTwoTextView"
-                    android:background="@color/flagTailandRed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="70dp"
-                    android:paddingEnd="50dp"/>
+                android:id="@+id/twentyEightTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/twentyFiveTextView"
+                android:layout_toEndOf="@+id/twentyFourTextView"
+                android:background="@android:color/holo_red_dark"
+                android:paddingStart="50dp"
+                android:paddingEnd="40dp"
+                android:paddingBottom="30dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/oneLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fifteenTextView"
+            android:layout_marginStart="59dp"
+            android:layout_marginTop="-173dp"
+            android:layout_marginBottom="50dp"
+            android:layout_toEndOf="@+id/tenTextView"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/eightteenTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/flagTailandRed"
+                android:paddingStart="70dp"
+                android:paddingEnd="50dp" />
+
+            <TextView
+                android:id="@+id/nineteenTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/flagTailandWhite"
+                android:paddingStart="70dp"
+                android:paddingEnd="50dp" />
+
+            <TextView
+                android:id="@+id/twentyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/flagTailandBlue"
+                android:paddingStart="70dp"
+                android:paddingEnd="50dp" />
+
+            <TextView
+                android:id="@+id/twentyOneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/flagTailandWhite"
+                android:paddingStart="70dp"
+                android:paddingEnd="50dp" />
+
+            <TextView
+                android:id="@+id/twentyTwoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/flagTailandRed"
+                android:paddingStart="70dp"
+                android:paddingEnd="50dp" />
         </LinearLayout>
-
     </RelativeLayout>
 </ScrollView>
