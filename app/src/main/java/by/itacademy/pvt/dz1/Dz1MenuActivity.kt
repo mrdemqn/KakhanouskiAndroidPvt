@@ -8,6 +8,7 @@ import by.itacademy.pvt.R
 import by.itacademy.pvt.dz0.Dz0MainActivity
 import by.itacademy.pvt.dz2.Dz2Activity
 import by.itacademy.pvt.dz3.Dz3Activity
+import by.itacademy.pvt.dz4.Dz4Activity
 
 class Dz1MenuActivity : Activity() {
 
@@ -15,21 +16,25 @@ class Dz1MenuActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz1_menu)
 
-        findViewById<View>(R.id.oneButton)
+        findViewById<View>(R.id.dzOneButton)
             .setOnClickListener {
                 viewDz0()
             }
-        findViewById<View>(R.id.twoButton)
+        findViewById<View>(R.id.dzTwoButton)
             .setOnClickListener {
                 viewDz1()
             }
-        findViewById<View>(R.id.threeButton)
+        findViewById<View>(R.id.dzThreeButton)
             .setOnClickListener {
                 viewDz2()
             }
-        findViewById<View>(R.id.fourButton)
+        findViewById<View>(R.id.dzFourButton)
             .setOnClickListener {
                 viewDz3()
+            }
+        findViewById<View>(R.id.dzFiveButton)
+            .setOnClickListener {
+                viewDz4()
             }
     }
     private fun viewDz0() {
@@ -46,6 +51,10 @@ class Dz1MenuActivity : Activity() {
     }
     private fun viewDz3() {
         val intent = Intent(this, Dz3Activity::class.java)
+        startActivity(intent)
+    }
+    private fun viewDz4() {
+        val intent = Intent(this, Dz4Activity::class.java)
         startActivity(intent)
     }
 }

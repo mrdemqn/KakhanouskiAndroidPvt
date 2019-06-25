@@ -11,22 +11,27 @@
             android:src="@drawable/back_dz">
     </ImageView>
     <TextView
-            android:id="@+id/oneButton"
+            android:id="@+id/dzOneButton"
             android:text="@string/dz0"
             style="@style/MenuNavigationTextView"/>
     <TextView
-            android:id="@+id/twoButton"
+            android:id="@+id/dzTwoButton"
             android:text="@string/dz1"
-            android:layout_below="@+id/oneButton"
+            android:layout_below="@+id/dzOneButton"
             style="@style/MenuNavigationTextView"/>
     <TextView
-            android:id="@+id/threeButton"
-            android:layout_below="@+id/twoButton"
+            android:id="@+id/dzThreeButton"
+            android:layout_below="@+id/dzTwoButton"
             android:text="@string/dz2_activity"
             style="@style/MenuNavigationTextView"/>
     <TextView
-            android:id="@+id/fourButton"
-            android:layout_below="@+id/threeButton"
+            android:id="@+id/dzFourButton"
+            android:layout_below="@+id/dzThreeButton"
             android:text="@string/dz3_activity"
+            style="@style/MenuNavigationTextView"/>
+    <TextView
+            android:id="@+id/dzFiveButton"
+            android:layout_below="@+id/dzFourButton"
+            android:text="@string/dz4_activity"
             style="@style/MenuNavigationTextView"/>
 </RelativeLayout>
