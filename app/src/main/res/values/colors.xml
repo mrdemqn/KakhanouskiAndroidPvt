@@ -23,5 +23,12 @@
     <color name="backLogIn">#51a5bf</color>
     <color name="colorButton">#A55B73</color>
     <color name="backCreateAcc">#b8a77f</color>
+    <color name="clock">#ff33b5e5</color>
+    <color name="secHand">#D30303</color>
+    <color name="hourHand">#0921AA</color>
+    <color name="minHand">#ffffff</color>
+    <color name="clockNumbers">#ffffff</color>
+    <color name="clockCenter">#FFFFFF</color>
+    <color name="lineClock">#FFFFFF</color>
 </resources>
 

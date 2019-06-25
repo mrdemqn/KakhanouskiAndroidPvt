@@ -2,4 +2,17 @@
 <resources>
     <dimen name="border_avatar_width">3dp</dimen>
     <dimen name="diam_avatar">115dp</dimen>
+
+    <dimen name="clock_width">3dp</dimen>
+    <dimen name="clock_margin">65dp</dimen>
+    <dimen name="numbers_clock_margin">25dp</dimen>
+    <dimen name="numbers_clock_size">30sp</dimen>
+    <dimen name="line_clock_width">3dp</dimen>
+    <dimen name="center_clock_point_radius">10dp</dimen>
+    <dimen name="center_sec_clock_point_radius">4dp</dimen>
+    <dimen name="center_hour_clock_point_radius">8dp</dimen>
+    <dimen name="hour_hand_width">8dp</dimen>
+    <dimen name="minute_hand_width">4dp</dimen>
+    <dimen name="minute_hand_margin">20dp</dimen>
+    <dimen name="second_hand_width">2dp</dimen>
 </resources>

@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="by.itacademy.pvt">
 
-    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,12 +13,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="by.itacademy.pvt.dz0.Dz0MainActivity" />
-        <activity android:name="by.itacademy.pvt.dz1.Dz1FlagsActivity" />
-        <activity android:name="by.itacademy.pvt.dz2.Dz2LoginPassActivity" />
-        <activity android:name="by.itacademy.pvt.dz2.Dz2Activity" />
-        <activity android:name="by.itacademy.pvt.dz3.Dz3Activity"/>
-        <activity android:name="by.itacademy.pvt.dz1.Dz1MenuActivity"
+        <activity
+            android:name="by.itacademy.pvt.dz4.Dz4Activity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,5 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="by.itacademy.pvt.dz0.Dz0MainActivity" />
+        <activity android:name="by.itacademy.pvt.dz1.Dz1FlagsActivity" />
+        <activity android:name="by.itacademy.pvt.dz2.Dz2LoginPassActivity" />
+        <activity android:name="by.itacademy.pvt.dz2.Dz2Activity" />
+        <activity android:name="by.itacademy.pvt.dz3.Dz3Activity" />
+        <activity android:name="by.itacademy.pvt.dz1.Dz1MenuActivity" />
     </application>
 </manifest>
