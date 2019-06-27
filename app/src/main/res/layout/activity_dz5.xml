@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <by.itacademy.pvt.dz5.Dz5View
+        android:id="@+id/dz5View"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
