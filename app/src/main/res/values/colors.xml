@@ -30,5 +30,9 @@
     <color name="clockNumbers">#ffffff</color>
     <color name="clockCenter">#FFFFFF</color>
     <color name="lineClock">#FFFFFF</color>
+    <color name="backgroundDz6">#67D5FF</color>
+    <color name="dz6TextView">#000000</color>
+    <color name="dz6BackgroundButton">#1A000000</color>
+    <color name="backOpacitySearchEditText">#52FFFFFF</color>
 </resources>
 

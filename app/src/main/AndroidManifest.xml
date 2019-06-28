@@ -14,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="by.itacademy.pvt.dz1.Dz1MenuActivity"
+            android:name="by.itacademy.pvt.dz6.Dz6StudentListActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,5 +28,8 @@
         <activity android:name="by.itacademy.pvt.dz2.Dz2Activity" />
         <activity android:name="by.itacademy.pvt.dz3.Dz3Activity" />
         <activity android:name="by.itacademy.pvt.dz4.Dz4Activity" />
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentDetailsActivity"/>
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentEditActivity"/>
+
     </application>
 </manifest>
