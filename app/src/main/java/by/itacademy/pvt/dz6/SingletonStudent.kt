@@ -25,21 +25,22 @@ object SingletonStudent {
         return studentsList
     }
 
-    fun addNewStudent(imageUrl: String, age: Int, name: String) {
+    fun addNewStudent(name: String, age: Int, imageUrl: String) {
         studentsList.add(
             Student(
-                imageUrl,
+                name,
                 age,
-                name))
+                imageUrl
+               ))
     }
 
-    fun upgradeStudentById (id: String, imageUrl: String, age: Int, name: String) {
+    fun upgradeStudentById (id: String, name: String, age: Int, imageUrl: String) {
         studentsList.find { it.id == id }
             ?.apply {
                 studentsList
-                this.imageUrl
-                this.age
-                this.name
+                this.name = name
+                this.age = age
+                this.imageUrl = imageUrl
         }
     }
 
