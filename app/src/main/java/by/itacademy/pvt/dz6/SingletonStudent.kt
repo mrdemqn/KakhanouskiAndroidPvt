@@ -1,12 +1,8 @@
 package by.itacademy.pvt.dz6
 
-class SingletonStudent private constructor(){
+object SingletonStudent {
 
-    private lateinit var studentsList: MutableList<Student>
-
-    companion object Singleton {
-        val instance = SingletonStudent
-    }
+    private var studentsList: MutableList<Student> = mutableListOf()
 
     fun getStudents() : MutableList<Student> {
         if (studentsList.isEmpty()) {
@@ -30,21 +26,36 @@ class SingletonStudent private constructor(){
     }
 
     fun addNewStudent(imageUrl: String, age: Int, name: String) {
-        studentsList.add(Student(imageUrl, age, name))
+        studentsList.add(
+            Student(
+                imageUrl,
+                age,
+                name))
     }
 
-    fun findStudentById (id: Long, imageUrl: String, age: Int, name: String) {
-        studentsList.find { it.id == id }?.apply {
-            this.imageUrl
-            this.age
-            this.name
+    fun upgradeStudentById (id: String, imageUrl: String, age: Int, name: String) {
+        studentsList.find { it.id == id }
+            ?.apply {
+                studentsList
+                this.imageUrl
+                this.age
+                this.name
         }
     }
 
-    fun deleteStudentByIdFromList (id: Long) {
-        studentsList.find { it.id == id }?.apply {
-            studentsList.remove(this)
+    fun deleteStudentByIdFromList (id: String) {
+        studentsList.find { it.id == id }
+            ?.apply {
+            studentsList
+                .remove(this)
         }
     }
 
+    fun searchByName(query: String): List<Student> {
+        return studentsList.filter { it.name.contains(query, true) }
+    }
+
+    fun findStudentById(id: String): Student? {
+        return studentsList.find { it.id == id }
+    }
 }

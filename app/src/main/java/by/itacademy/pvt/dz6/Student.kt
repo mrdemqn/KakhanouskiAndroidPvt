@@ -1,9 +1,11 @@
 package by.itacademy.pvt.dz6
 
+import java.util.UUID
+
 class Student(
-    val name: String,
+    var name: String,
     var age: Int,
     var imageUrl: String
 ) {
-    val id = System.currentTimeMillis()
+    val id = UUID.randomUUID().toString()
 }

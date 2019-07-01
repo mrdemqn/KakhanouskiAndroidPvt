@@ -78,7 +78,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="45dp"
         android:background="@color/dz6BackgroundButton"
-        android:text="@string/delete_button"
+        android:text="@string/dz6_delete_button"
         android:textSize="18sp" />
 
 </RelativeLayout>
