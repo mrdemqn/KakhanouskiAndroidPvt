@@ -44,8 +44,9 @@
     <string name="dz6_url_photo">Введите URL-адрес фото</string>
     <string name="dz6_enter_name">Введите имя</string>
     <string name="dz6_enter_age">Введите возраст</string>
-    <string name="dz6_error_cannot_be_blank">Field cannot be blank</string>
-    <string name="dz6_error_url_is_invalid">URL is invalid</string>
+    <string name="dz6_error_cannot_be_blank">Поле обязательно для заполнения</string>
+    <string name="dz6_error_url_is_invalid">Не правильный URL-адрес</string>
     <string name="dz5_activity">ДЗ№5</string>
     <string name="dz6_activity">ДЗ№6</string>
+    <string name="dz6_error_id">Не правильный ID</string>
 </resources>

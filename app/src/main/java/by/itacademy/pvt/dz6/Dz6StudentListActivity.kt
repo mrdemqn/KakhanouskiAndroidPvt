@@ -1,7 +1,6 @@
 package by.itacademy.pvt.dz6
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,14 +12,10 @@ import by.itacademy.pvt.R
 import java.util.*
 import kotlin.concurrent.schedule
 
-
 class Dz6StudentListActivity : Activity(), Dz6ListAdapter.ClickListener {
+
     private lateinit var adapterDz6List: Dz6ListAdapter
     private var searchText: String = ""
-
-    companion object {
-        const val ID_EXTRA = "ID_EXTRA"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +24,7 @@ class Dz6StudentListActivity : Activity(), Dz6ListAdapter.ClickListener {
         val recyclerView = findViewById<RecyclerView>(R.id.dz6StListRecycleView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapterDz6List = Dz6ListAdapter(SingletonStudent.getStudents(), this)
+        adapterDz6List = Dz6ListAdapter(SupervisingStudents.getStudents(), this)
         recyclerView.adapter = adapterDz6List
 
         val searchEditText = findViewById<EditText>(R.id.dz6SearchEditText)
@@ -56,16 +51,12 @@ class Dz6StudentListActivity : Activity(), Dz6ListAdapter.ClickListener {
         })
 
         findViewById<ImageView>(R.id.dz6AddStudent).setOnClickListener {
-            val intent = Intent(this@Dz6StudentListActivity, Dz6StudentEditActivity::class.java)
-            intent.putExtra(ID_EXTRA, "")
-            startActivity(intent)
+            startActivity(Dz6StudentEditActivity.getIntent(this@Dz6StudentListActivity, ""))
         }
     }
 
     override fun onStudentClick(item: Student) {
-        val intent = Intent(this@Dz6StudentListActivity, Dz6StudentDetailsActivity::class.java)
-        intent.putExtra(ID_EXTRA, item.id)
-        startActivity(intent)
+        startActivity(Dz6StudentDetailsActivity.getIntent(this@Dz6StudentListActivity, item.id))
     }
 
     override fun onResume() {
@@ -74,6 +65,6 @@ class Dz6StudentListActivity : Activity(), Dz6ListAdapter.ClickListener {
     }
 
     private fun executeSearch() {
-        adapterDz6List.updateList(SingletonStudent.searchByName(searchText))
+        adapterDz6List.updateList(SupervisingStudents.searchByName(searchText))
     }
 }
