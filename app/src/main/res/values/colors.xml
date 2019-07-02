@@ -30,5 +30,17 @@
     <color name="clockNumbers">#ffffff</color>
     <color name="clockCenter">#FFFFFF</color>
     <color name="lineClock">#FFFFFF</color>
+    <color name="pie_chart_1">#A03500</color>
+    <color name="pie_chart_2">#DF9A17</color>
+    <color name="pie_chart_3">#DFAD93</color>
+    <color name="pie_chart_4">#4CB321</color>
+    <color name="pie_chart_5">#64C4BA</color>
+    <color name="pie_chart_6">#076174</color>
+    <color name="pie_chart_7">#1B358D</color>
+    <color name="pie_chart_8">#5500EB</color>
+    <color name="pie_chart_9">#B615AF</color>
+    <color name="pie_chart_10">#FF024A</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>
 
