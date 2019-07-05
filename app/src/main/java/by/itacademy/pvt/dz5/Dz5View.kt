@@ -14,7 +14,6 @@ import by.itacademy.pvt.R
 import kotlin.math.cos
 import kotlin.math.sin
 
-
 class Dz5View : View {
 
     private val pieChartRectF = RectF()
@@ -34,7 +33,6 @@ class Dz5View : View {
     private var pieChartPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var pieChartTextPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var pieChartLinePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-
 
     private var pieChartScaledValues = FloatArray(0)
     var pieChartValues: FloatArray = FloatArray(0)
