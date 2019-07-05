@@ -14,8 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="by.itacademy.pvt.dz1.Dz1MenuActivity"
-            android:screenOrientation="portrait">
+            android:name="by.itacademy.pvt.dz5.Dz5Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

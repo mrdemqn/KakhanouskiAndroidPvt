@@ -6,10 +6,10 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.icu.util.Calendar
 import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import by.itacademy.pvt.R
 
 class Dz4View : View {

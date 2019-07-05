@@ -36,6 +36,14 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz4()
             }
+        findViewById<View>(R.id.dzSixButton)
+            .setOnClickListener {
+                viewDz5()
+            }
+//        findViewById<View>(R.id.dzSevenButton)
+//            .setOnClickListener {
+//                viewDz6()
+//            }
     }
     private fun viewDz0() {
         val intent = Intent(this, Dz0MainActivity::class.java)
@@ -57,4 +65,12 @@ class Dz1MenuActivity : Activity() {
         val intent = Intent(this, Dz4Activity::class.java)
         startActivity(intent)
     }
+    private fun viewDz5() {
+        val intent = Intent(this, Dz4Activity::class.java)
+        startActivity(intent)
+    }
+//    private fun viewDz6() {
+//        val intent = Intent(this, Dz6StudentListActivity::class.java)
+//        startActivity(intent)
+//    }
 }
