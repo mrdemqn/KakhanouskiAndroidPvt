@@ -67,7 +67,7 @@ class Dz8StudentListActivity : Activity(), Dz8ListAdapter.ClickListener {
 
     override fun onStart() {
         super.onStart()
-        this.dz8EditText.setText(sharPrefManager.getUserText())
+        dz8EditText.setText(sharPrefManager.getUserText())
     }
 
     override fun onStop() {
