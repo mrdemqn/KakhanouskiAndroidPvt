@@ -9,6 +9,7 @@ import by.itacademy.pvt.dz0.Dz0MainActivity
 import by.itacademy.pvt.dz2.Dz2Activity
 import by.itacademy.pvt.dz3.Dz3Activity
 import by.itacademy.pvt.dz4.Dz4Activity
+import by.itacademy.pvt.dz6.Dz6StudentListActivity
 
 class Dz1MenuActivity : Activity() {
 
@@ -40,10 +41,11 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz5()
             }
-//        findViewById<View>(R.id.dzSevenButton)
-//            .setOnClickListener {
-//                viewDz6()
-//            }
+        findViewById<View>(R.id.dzSevenButton)
+            .setOnClickListener {
+                viewDz6()
+           }
+
     }
     private fun viewDz0() {
         val intent = Intent(this, Dz0MainActivity::class.java)
@@ -69,8 +71,8 @@ class Dz1MenuActivity : Activity() {
         val intent = Intent(this, Dz4Activity::class.java)
         startActivity(intent)
     }
-//    private fun viewDz6() {
-//        val intent = Intent(this, Dz6StudentListActivity::class.java)
-//        startActivity(intent)
-//    }
+    private fun viewDz6() {
+        val intent = Intent(this, Dz6StudentListActivity::class.java)
+        startActivity(intent)
+    }
 }

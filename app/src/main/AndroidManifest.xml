@@ -27,5 +27,9 @@
         <activity android:name="by.itacademy.pvt.dz2.Dz2Activity" />
         <activity android:name="by.itacademy.pvt.dz3.Dz3Activity" />
         <activity android:name="by.itacademy.pvt.dz4.Dz4Activity" />
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentDetailsActivity"/>
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentEditActivity"/>
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentListActivity"/>
+
     </application>
 </manifest>

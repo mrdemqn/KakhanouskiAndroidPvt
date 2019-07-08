@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/backgroundDz6"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/dz6SearchEditText"
+        style="@style/SearchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:drawableStart="@drawable/ic_search_black_26dp"
+        android:hint="@string/dz6_hint_search"
+        android:textColor="@android:color/black"
+        android:imeOptions="actionDone"
+        android:inputType="text" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dz6StListRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="50dp" />
+
+    <ImageView
+        android:id="@+id/dz6AddStudent"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="30dp"
+        android:src="@drawable/ic_add_circle_green_24dp" />
+</FrameLayout>
+</LinearLayout>

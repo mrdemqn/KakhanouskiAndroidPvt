@@ -54,4 +54,39 @@
         <item name="android:layout_weight">1</item>
     </style>
 
+    <style name="Dz6StudentsDetailsNameAge">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dz6TextView</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="SearchEditText">
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:background">@color/backOpacitySearchEditText</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@fonts/monda_regular</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColorHint">@android:color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="Dz6LinearLayoutStudentEdit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginBottom">30dp</item>
+        <item name="android:background">@color/backOpacityEditText</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textColorHint">@android:color/black</item>
+    </style>
 </resources>

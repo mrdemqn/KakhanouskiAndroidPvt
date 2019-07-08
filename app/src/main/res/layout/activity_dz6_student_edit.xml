@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundDz6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dz6UrlLinearLayout"
+        app:errorEnabled="true"
+        style="@style/Dz6LinearLayoutStudentEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dz6UrlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/dz6_url_photo"
+            android:imeOptions="actionNext"
+            android:inputType="textUri" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dz6NameLinearLayout"
+        style="@style/Dz6LinearLayoutStudentEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dz6NameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/dz6_enter_name"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dz6AgeLinearLayout"
+        style="@style/Dz6LinearLayoutStudentEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dz6AgeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/dz6_enter_age"
+            android:imeOptions="actionDone"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/dz6SaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@color/dz6BackgroundButton"
+        android:paddingStart="35dp"
+        android:paddingEnd="35dp"
+        android:layout_gravity="center"
+        android:text="@string/dz6_save_button"
+        android:textSize="22sp" />
+
+</LinearLayout>
