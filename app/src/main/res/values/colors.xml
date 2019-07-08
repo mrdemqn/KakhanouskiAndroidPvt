@@ -42,5 +42,10 @@
     <color name="pie_chart_10">#FF024A</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="backgroundDz6">#67D5FF</color>
+    <color name="dz6TextView">#000000</color>
+    <color name="dz6BackgroundButton">#1A000000</color>
+    <color name="backOpacitySearchEditText">#52FFFFFF</color>
+    <color name="backOpacityEditText">#52FFFFFF</color>
 </resources>
 
