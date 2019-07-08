@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/openEyes"
+        android:state_activated="true">
+        <bitmap android:src="@drawable/sova_anmation_1" />
+    </item>
+
+    <item
+        android:id="@+id/closeEyes"
+        android:state_activated="true">
+        <bitmap android:src="@drawable/sova_anmation_3" />
+    </item>
+
+    <transition
+        android:drawable="@drawable/closing_eyes_animation_list"
+        android:fromId="@+id/openEyes"
+        android:toId="@+id/closeEyes" />
+
+</animated-selector>

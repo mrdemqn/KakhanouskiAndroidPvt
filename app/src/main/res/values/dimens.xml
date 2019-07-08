@@ -15,4 +15,6 @@
     <dimen name="minute_hand_width">4dp</dimen>
     <dimen name="minute_hand_margin">20dp</dimen>
     <dimen name="second_hand_width">2dp</dimen>
+    <dimen name="pie_chart_text_size">20sp</dimen>
+    <dimen name="pie_chart_line_width">2dp</dimen>
 </resources>

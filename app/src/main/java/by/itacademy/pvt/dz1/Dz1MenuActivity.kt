@@ -44,7 +44,8 @@ class Dz1MenuActivity : Activity() {
         findViewById<View>(R.id.dzSevenButton)
             .setOnClickListener {
                 viewDz6()
-            }
+           }
+
     }
     private fun viewDz0() {
         val intent = Intent(this, Dz0MainActivity::class.java)
