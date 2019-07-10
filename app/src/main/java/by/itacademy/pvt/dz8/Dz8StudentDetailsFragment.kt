@@ -12,10 +12,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
 import by.itacademy.pvt.dz6.SupervisingStudents
+import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.utils.loadCircleImage
 
 private const val ID_KEY = "ID_KEY"
-private const val STUDENT_ID = "STUDENT_ID"
 
 class Dz8StudentDetailsFragment : Fragment() {
 
@@ -29,7 +29,7 @@ class Dz8StudentDetailsFragment : Fragment() {
 
             val bundle = Bundle()
             bundle.putString(ID_KEY, id)
-            fragment.arguments
+            fragment.arguments = bundle
             return fragment
         }
     }
@@ -42,16 +42,16 @@ class Dz8StudentDetailsFragment : Fragment() {
         val errorId = resources.getString(R.string.dz6_error_id)
 
         val studentId = arguments?.getString(ID_KEY, null)
-        val student = studentId?.let { SupervisingStudents.findStudentById(it) }
-        val avatarImageView = view.findViewById<ImageView>(R.id.dz6AvatarImageView)
+        val student: Student? =  studentId?.let { SupervisingStudents.findStudentById(it) }
+        val avatarImageView = view.findViewById<ImageView>(R.id.dz8AvatarImageView)
 
         if (student != null) {
             context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
-            view.findViewById<TextView>(R.id.dz6NameTextView).text = student.name
-            view.findViewById<TextView>(R.id.dz6AgeTextView).text = student.age.toString()
+            view.findViewById<TextView>(R.id.dz8NameTextView).text = student.name
+            view.findViewById<TextView>(R.id.dz8AgeTextView).text = student.age.toString()
         }
 
-        view.findViewById<Button>(R.id.deleteButton).setOnClickListener {
+        view.findViewById<Button>(R.id.dz8deleteButton).setOnClickListener {
             if (student == null) {
                 Toast.makeText(context, errorId, Toast.LENGTH_SHORT).show()
             } else {
@@ -60,7 +60,7 @@ class Dz8StudentDetailsFragment : Fragment() {
             listener?.onClickedDeleteStudent()
         }
 
-        view.findViewById<Button>(R.id.editButton).setOnClickListener {
+        view.findViewById<Button>(R.id.dz8editButton).setOnClickListener {
             if (student == null) {
                 Toast.makeText(context, errorId, Toast.LENGTH_SHORT).show()
             } else {

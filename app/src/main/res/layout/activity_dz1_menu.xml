@@ -1,47 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/back_dz">
-    </ImageView>
+        android:src="@drawable/back_dz"></ImageView>
+
     <TextView
         android:id="@+id/dzOneButton"
-        android:text="@string/dz0"
-        style="@style/MenuNavigationTextView"/>
+        style="@style/MenuNavigationTextView"
+        android:text="@string/dz0" />
+
     <TextView
         android:id="@+id/dzTwoButton"
-        android:text="@string/dz1"
+        style="@style/MenuNavigationTextView"
         android:layout_below="@+id/dzOneButton"
-        style="@style/MenuNavigationTextView"/>
+        android:text="@string/dz1" />
+
     <TextView
         android:id="@+id/dzThreeButton"
+        style="@style/MenuNavigationTextView"
         android:layout_below="@+id/dzTwoButton"
-        android:text="@string/dz2_activity"
-        style="@style/MenuNavigationTextView"/>
+        android:text="@string/dz2_activity" />
+
     <TextView
         android:id="@+id/dzFourButton"
+        style="@style/MenuNavigationTextView"
         android:layout_below="@+id/dzThreeButton"
-        android:text="@string/dz3_activity"
-        style="@style/MenuNavigationTextView"/>
+        android:text="@string/dz3_activity" />
+
     <TextView
         android:id="@+id/dzFiveButton"
+        style="@style/MenuNavigationTextView"
         android:layout_below="@+id/dzFourButton"
-        android:text="@string/dz4_activity"
-        style="@style/MenuNavigationTextView"/>
+        android:text="@string/dz4_activity" />
+
     <TextView
         android:id="@+id/dzSixButton"
+        style="@style/MenuNavigationTextView"
         android:layout_below="@+id/dzFiveButton"
-        android:text="@string/dz5_activity"
-        style="@style/MenuNavigationTextView"/>
+        android:text="@string/dz5_activity" />
+
     <TextView
         android:id="@+id/dzSevenButton"
+        style="@style/MenuNavigationTextView"
         android:layout_below="@+id/dzSixButton"
-        android:text="@string/dz6_activity"
-        style="@style/MenuNavigationTextView"/>
+        android:text="@string/dz6_activity" />
+
+    <TextView
+        android:id="@+id/dzEightButton"
+        style="@style/MenuNavigationTextView"
+        android:layout_toEndOf="@+id/dzSevenButton"
+        android:text="@string/dz8_activity" />
 </RelativeLayout>

@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.URLUtil
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
 import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.dz6.SupervisingStudents
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import java.util.*
+import java.util.UUID
 
 private const val ID_KEY = "ID_KEY"
-private const val STUDENT_ID = "STUDENT_ID"
-
 
 class Dz8StudentEditFragment : Fragment() {
 
@@ -27,12 +24,12 @@ class Dz8StudentEditFragment : Fragment() {
     companion object {
         val TAG = Dz8StudentEditFragment::class.java.canonicalName!!
 
-        fun getInstance(id: String? = null): Dz8StudentEditFragment { //Так передавать данные (ID к примеру)
+        fun getInstance(id: String? = null): Dz8StudentEditFragment {
             val fragment = Dz8StudentEditFragment()
 
             val bundle = Bundle()
             bundle.putString(ID_KEY, id)
-            fragment.arguments
+            fragment.arguments = bundle
             return fragment
         }
     }
@@ -42,19 +39,18 @@ class Dz8StudentEditFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val urlEditText = view.findViewById<TextInputEditText>(R.id.dz8UrlEditText)
+        val nameEditText = view.findViewById<TextInputEditText>(R.id.dz8NameEditText)
+        val ageEditText = view.findViewById<TextInputEditText>(R.id.dz8AgeEditText)
 
-        val urlEditText = view.findViewById<TextInputEditText>(R.id.dz6UrlEditText)
-        val nameEditText = view.findViewById<TextInputEditText>(R.id.dz6NameEditText)
-        val ageEditText = view.findViewById<TextInputEditText>(R.id.dz6AgeEditText)
-
-        val urlLinearLayout = view.findViewById<TextInputLayout>(R.id.dz6UrlLinearLayout)
-        val nameLinearLayout = view.findViewById<TextInputLayout>(R.id.dz6NameLinearLayout)
-        val ageLinearLayout = view.findViewById<TextInputLayout>(R.id.dz6AgeLinearLayout)
+        val urlLinearLayout = view.findViewById<TextInputLayout>(R.id.dz8UrlLinearLayout)
+        val nameLinearLayout = view.findViewById<TextInputLayout>(R.id.dz8NameLinearLayout)
+        val ageLinearLayout = view.findViewById<TextInputLayout>(R.id.dz8AgeLinearLayout)
 
         val errorCannotBeBlank = resources.getString(R.string.dz6_error_cannot_be_blank)
         val errorUrlIsInvalid = resources.getString(R.string.dz6_error_url_is_invalid)
 
-        val studentId = arguments?.getString(STUDENT_ID, null)
+        val studentId = arguments?.getString(ID_KEY, null)
         val student: Student? = studentId?.let { SupervisingStudents.findStudentById(it) }
         val errorId = resources.getString(R.string.dz6_error_id)
 
@@ -64,7 +60,7 @@ class Dz8StudentEditFragment : Fragment() {
             ageEditText.setText(student.age.toString())
         }
 
-        view.findViewById<Button>(R.id.dz6SaveButton).setOnClickListener {
+        view.findViewById<Button>(R.id.dz8SaveButton).setOnClickListener {
             val url = urlEditText.text.toString().trim()
             val name = nameEditText.text.toString().trim()
             val age = ageEditText.text.toString().toIntOrNull()
@@ -102,12 +98,12 @@ class Dz8StudentEditFragment : Fragment() {
             }
 
             if (student == null) {
-                SupervisingStudents.upgradeStudentById(Student(UUID.randomUUID().toString(), name, age!!, url))
+                SupervisingStudents.addNewStudent(Student(UUID.randomUUID().toString(), name, age!!, url))
             } else {
-                SupervisingStudents.addNewStudent(Student(student.id, name, age!!, url))
+                SupervisingStudents.upgradeStudentById(Student(student.id, name, age!!, url))
             }
-            listener?.onClickedSaveStudent()
         }
+        listener?.onClickedSaveStudent()
     }
 
     override fun onAttach(context: Context) {

@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/dz6AvatarImageView"
+        android:id="@+id/dz8AvatarImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
@@ -18,49 +18,49 @@
         android:scaleType="centerCrop" />
 
     <LinearLayout
-        android:id="@+id/dz6NameLinearLayout"
+        android:id="@+id/dz8NameLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dz6AvatarImageView"
+        android:layout_below="@+id/dz8AvatarImageView"
         android:layout_marginTop="25dp"
         android:gravity="center_horizontal|start"
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
         <TextView
-            android:id="@+id/dz6NameTitleTextView"
+            android:id="@+id/dz8NameTitleTextView"
             style="@style/Dz6StudentsDetailsNameAge"
             tools:text="Name" />
 
         <TextView
-            android:id="@+id/dz6NameTextView"
+            android:id="@+id/dz8NameTextView"
             style="@style/Dz6StudentsDetailsNameAge"
             tools:text="Pelmen Pelmen" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/dz6AgeLinearLayout"
+        android:id="@+id/dz8AgeLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dz6NameLinearLayout"
+        android:layout_below="@+id/dz8NameLinearLayout"
         android:layout_marginTop="25dp"
         android:gravity="center_horizontal|start"
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
         <TextView
-            android:id="@+id/dz6AgeTitleTextView"
+            android:id="@+id/dz8AgeTitleTextView"
             style="@style/Dz6StudentsDetailsNameAge"
             tools:text="Age" />
 
         <TextView
-            android:id="@+id/dz6AgeTextView"
+            android:id="@+id/dz8AgeTextView"
             style="@style/Dz6StudentsDetailsNameAge"
             tools:text="19" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/editButton"
+        android:id="@+id/dz8editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -71,7 +71,7 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/deleteButton"
+        android:id="@+id/dz8deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
