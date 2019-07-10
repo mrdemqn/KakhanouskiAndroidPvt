@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="by.itacademy.pvt">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,31 +15,28 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity
-            android:name="by.itacademy.pvt.dz1.Dz1MenuActivity">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".dz9.Dz9MapsActivity"
+            android:label="@string/title_activity_maps" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="by.itacademy.pvt.dz0.Dz0MainActivity" />
-        <activity android:name="by.itacademy.pvt.dz1.Dz1FlagsActivity" />
-        <activity android:name="by.itacademy.pvt.dz2.Dz2LoginPassActivity" />
-        <activity android:name="by.itacademy.pvt.dz2.Dz2Activity" />
-        <activity android:name="by.itacademy.pvt.dz3.Dz3Activity" />
-        <activity android:name="by.itacademy.pvt.dz4.Dz4Activity" />
-<<<<<<< HEAD
-        <activity android:name="by.itacademy.pvt.dz5.dz5_sova.Dz5SovaActivity" />
-        <activity android:name="by.itacademy.pvt.dz5.Dz5Activity" />
-        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentListActivity" />
-        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentEditActivity" />
-        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentDetailsActivity" />
-=======
-        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentDetailsActivity"/>
-        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentEditActivity"/>
-        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentListActivity"/>
-
->>>>>>> 49b30c45ddf99658b0a6008b1b49bf1d980c160d
+        <activity android:name=".dz0.Dz0MainActivity" />
+        <activity android:name=".dz1.Dz1FlagsActivity" />
+        <activity android:name=".dz2.Dz2LoginPassActivity" />
+        <activity android:name=".dz2.Dz2Activity" />
+        <activity android:name=".dz3.Dz3Activity" />
+        <activity android:name=".dz4.Dz4Activity" />
+        <activity android:name=".dz5.dz5_sova.Dz5SovaActivity" />
+        <activity android:name=".dz5.Dz5Activity" />
+        <activity android:name=".dz6.Dz6StudentListActivity" />
+        <activity android:name=".dz6.Dz6StudentEditActivity" />
+        <activity android:name=".dz6.Dz6StudentDetailsActivity" />
     </application>
 </manifest>

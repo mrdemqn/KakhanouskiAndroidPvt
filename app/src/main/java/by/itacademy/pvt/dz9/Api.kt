@@ -1,10 +1,9 @@
-package com.example.myfirstandroid.cw9
+package by.itacademy.pvt.dz9
 
-import com.example.myfirstandroid.cw9.entity.CarResponse
+import by.itacademy.pvt.dz9.entity.CarResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-
 
 interface Api {
 

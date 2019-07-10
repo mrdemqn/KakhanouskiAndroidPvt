@@ -30,11 +30,6 @@
     <color name="clockNumbers">#ffffff</color>
     <color name="clockCenter">#FFFFFF</color>
     <color name="lineClock">#FFFFFF</color>
-    <color name="backgroundDz6">#67D5FF</color>
-    <color name="dz6TextView">#000000</color>
-    <color name="dz6BackgroundButton">#1A000000</color>
-    <color name="backOpacitySearchEditText">#52FFFFFF</color>
-    <color name="backOpacityEditText">#52FFFFFF</color>
     <color name="pie_chart_1">#A03500</color>
     <color name="pie_chart_2">#DF9A17</color>
     <color name="pie_chart_3">#DFAD93</color>

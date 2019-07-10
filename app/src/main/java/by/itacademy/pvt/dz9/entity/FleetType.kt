@@ -1,4 +1,4 @@
-package com.example.myfirstandroid.cw9.entity
+package by.itacademy.pvt.dz9.entity
 
 import com.google.gson.annotations.SerializedName
 

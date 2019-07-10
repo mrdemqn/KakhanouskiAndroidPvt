@@ -1,7 +1,7 @@
-package com.example.myfirstandroid.cw9
+package by.itacademy.pvt.dz9
 
 import android.view.View
-import com.example.myfirstandroid.cw9.entity.CoordinateParams
+import by.itacademy.pvt.dz9.entity.CoordinateParams
 
 // CRUD - create, read, update, delete
 class CarRepositoryRemote(private val api: Api) : CarRepository {

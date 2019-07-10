@@ -1,8 +1,8 @@
-package com.example.myfirstandroid.cw9
+package by.itacademy.pvt.dz9
 
-import com.example.myfirstandroid.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.squareup.picasso.BuildConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import okhttp3.logging.HttpLoggingInterceptor
