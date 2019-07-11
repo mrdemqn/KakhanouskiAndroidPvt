@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         tools:context="by.itacademy.pvt.dz9.Dz9MapsActivity" />
 
+
     <FrameLayout
         android:id="@+id/dz9Container1"
         android:layout_width="match_parent"
@@ -18,5 +19,6 @@
         android:background="@android:color/white"
         app:behavior_hideable="false"
         app:behavior_peekHeight="80dp"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

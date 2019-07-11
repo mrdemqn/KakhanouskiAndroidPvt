@@ -1,33 +1,43 @@
 package by.itacademy.pvt.dz9
 
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.FrameLayout
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentActivity
 import by.itacademy.pvt.R
+import by.itacademy.pvt.dz9.entity.Coordinate
+import by.itacademy.pvt.dz9.entity.CoordinateParams
+import by.itacademy.pvt.dz9.entity.Poi
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import java.io.IOException
 
-class Dz9MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class Dz9MapsActivity : FragmentActivity(), Dz9CarListFragment.ClickListener, CarRepositoryResult, OnMapReadyCallback,
+    GoogleMap.OnMarkerClickListener {
+    override fun onMarkerClick(p0: Marker?) = false
 
     private lateinit var map: GoogleMap
-    private  lateinit  var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private val carRepository: CarRepository = provideCarRepository()
+    private val poiList: MutableList<Poi> = mutableListOf()
 
     private lateinit var lastLocation: Location
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<FrameLayout>
+    private lateinit var iconCarBitmap: Bitmap
+    private var flagMapReady = false
+    private var flagListReady = false
 
     companion object {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
@@ -36,72 +46,103 @@ class Dz9MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz9_maps)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient (this)
+        //fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        carRepository.getCarByCoordinate(CoordinateParams(Coordinate(150.0, 300.2), Coordinate(350.0, 250.0)), this)
+
+        bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.dz9Container1))
+
+        //iconCarBitmap = AppCompatResources.getDrawable(this, R.drawable.ic_user_location)
     }
+
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-
+        flagMapReady = true
         map.uiSettings.isZoomControlsEnabled = true
         map.setOnMarkerClickListener(this)
+        if (flagMapReady) {
+            setUpMap()
+        }
+    }
 
-        setUpMap()
-//
-//        val myPlace = LatLng ( 40.73 , - 73.99 )   // это Нью-Йорк
-//        map.addMarker (MarkerOptions (). position (myPlace) .title ( "Мой любимый город" ))
-//        map.moveCamera (CameraUpdateFactory.newLatLngZoom (myPlace, 12.0f))
-//
-//        map.uiSettings.isZoomControlsEnabled = true
-//        map.setOnMarkerClickListener(this)
+    override fun onCarClick(item: Poi) {
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        map.clear()
+        val taxiCar = LatLng(
+            item.coordinate?.latitude!!,
+            item.coordinate.longitude
+        )
+        placeMarkerOnMap(taxiCar)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(taxiCar, 12f))
+    }
+
+    override fun onSuccess(list: List<Poi>) {
+        poiList.addAll(list)
+        flagListReady = true
+
+        if (flagListReady) {
+            setUpMap()
+        }
+    }
+
+    override fun onError(throwable: Throwable) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun placeMarkerOnMap(location: LatLng) {
+        val markerOptions = MarkerOptions().position(location)
+
+        markerOptions.icon(
+            BitmapDescriptorFactory.fromBitmap(
+                BitmapFactory.decodeResource(resources, R.mipmap.ic_user_location)
+            )
+        )
+        val titleStr = getAddress(location)
+        markerOptions.title(titleStr)
+        map.addMarker(markerOptions)
     }
 
     private fun setUpMap() {
-        if (ActivityCompat.checkSelfPermission(this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE
+            )
             return
         }
         map.isMyLocationEnabled = true
 
-        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng (location.latitude, location.longitude)
-                placeMarkerOnMap(currentLatLng)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
-            }
+        val builder = LatLngBounds.builder()
+
+        poiList.forEach {itPoi ->
+            val coords = LatLng(itPoi.coordinate!!.latitude, itPoi.coordinate.longitude)
+            builder.include(coords)
+            map.addMarker(MarkerOptions()
+                .position(coords)
+                .icon(BitmapDescriptorFactory.fromBitmap(iconCarBitmap))
+                .rotation(itPoi.heading!!.toFloat()))
         }
-    }
-
-    private fun placeMarkerOnMap(location: LatLng) {
-
-        val markerOptions = MarkerOptions().position(location)
-
-        markerOptions.icon (
-            BitmapDescriptorFactory.fromBitmap (
-            BitmapFactory.decodeResource (resources, R.mipmap.ic_user_location)))
-
-        val titleStr = getAddress(location)
-        markerOptions.title(titleStr)
-
-        map.addMarker(markerOptions)
+        val bounds = builder.build()
+        val boundsPadding = 150
+        map.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, boundsPadding))
     }
 
     private fun getAddress(latLng: LatLng): String {
-        // 1
         val geocoder = Geocoder(this)
         val addressList: List<Address>?
         val address: Address?
         var addressText = ""
 
         try {
-            // 2
             addressList = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
-            // 3
             if (null != addressList && !addressList.isEmpty()) {
                 address = addressList[0]
                 for (i in 0 until address.maxAddressLineIndex) {
@@ -114,7 +155,4 @@ class Dz9MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMar
 
         return addressText
     }
-
-
-    override fun onMarkerClick(p0: Marker?) = false
 }

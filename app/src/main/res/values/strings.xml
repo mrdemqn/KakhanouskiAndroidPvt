@@ -50,4 +50,6 @@
     <string name="dz6_error_cannot_be_blank">Поле обязательно для заполнения</string>
     <string name="dz6_error_url_is_invalid">Не правильный URL-адрес</string>
     <string name="title_activity_maps">Map</string>
+    <string name="dz9_lat">Latitude</string>
+    <string name="dz9_lng">Longitude</string>
 </resources>

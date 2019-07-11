@@ -5,7 +5,7 @@ fun provideCarRepository(): CarRepository {
     return CarRepositoryRemote(
         NetProvider.provideApi(
             NetProvider.provideRetrofit(
-                "http",
+                "http://",
                 NetProvider.provideOkHttp(),
                 NetProvider.provideGson()
             )

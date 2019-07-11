@@ -1,7 +1,5 @@
 package by.itacademy.pvt.dz9.entity
 
-import by.itacademy.pvt.dz9.entity.Coordinate
-import by.itacademy.pvt.dz9.entity.FleetType
 import com.google.gson.annotations.SerializedName
 
 data class Poi(
