@@ -22,9 +22,10 @@ class Dz9CarListFragment : Fragment(), Dz9Adapter.ClickListener, CarRepositoryRe
     private var listener: ClickListener? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_dz9_car_list, container, false)
         carRepository.getCarByCoordinate(CoordinateParams(Coordinate(150.0, 300.2), Coordinate(350.0, 250.0)), this)
 
-        return inflater.inflate(R.layout.fragment_dz9_car_list, container, false)
+        return view
     }
 
     override fun onCarClick(item: Poi) {

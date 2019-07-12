@@ -43,7 +43,7 @@ class Dz9CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val coordinateLongitude = view.findViewById<TextView>(R.id.dz9CoordLng)
 
     fun bind(item: Poi) {
-        fleetTypeTextView.text = item.fleetType.toString()
+        fleetTypeTextView.text = item.fleetType?.name
         coordinateLatitude.text = item.coordinate?.latitude.toString()
         coordinateLongitude.text = item.coordinate?.longitude.toString()
     }

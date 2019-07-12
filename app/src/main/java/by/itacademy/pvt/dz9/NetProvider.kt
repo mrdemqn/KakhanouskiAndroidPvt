@@ -7,17 +7,14 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
 
 object NetProvider {
 
     private var api: Api? = null
 
     fun provideGson(): Gson {
-        val gson = GsonBuilder()
+        return GsonBuilder()
             .create()
-
-        return gson
     }
 
     fun provideOkHttp(): OkHttpClient {
@@ -26,11 +23,11 @@ object NetProvider {
         val okhttpBuilder = OkHttpClient.Builder()
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.BASIC
+            logging.level = HttpLoggingInterceptor.Level.BODY
             okhttpBuilder.addInterceptor(logging)
         }
 
-        okhttpBuilder.connectTimeout(5, TimeUnit.SECONDS) //Ожидание ответа от сервера. Если время кончилось, то ошибка
+        //okhttpBuilder.connectTimeout(5, TimeUnit.SECONDS) //Ожидание ответа от сервера. Если время кончилось, то ошибка
 
         val okhttpClient = okhttpBuilder.build()
 
