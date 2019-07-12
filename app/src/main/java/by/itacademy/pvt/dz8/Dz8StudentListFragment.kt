@@ -34,6 +34,15 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
 
     companion object {
         val TAG = Dz8StudentListFragment::class.java.canonicalName!!
+
+        fun getInstance(id: String? = null): Dz8StudentListFragment {
+            val fragment = Dz8StudentListFragment()
+
+            val bundle = Bundle()
+            bundle.putString(ID_KEY, id)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

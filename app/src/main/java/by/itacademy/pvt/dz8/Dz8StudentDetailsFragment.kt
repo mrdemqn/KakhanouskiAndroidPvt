@@ -41,7 +41,7 @@ class Dz8StudentDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val errorId = resources.getString(R.string.dz6_error_id)
 
-        val studentId = arguments?.getString(ID_KEY, null)
+        val studentId = arguments?.getString(ID_KEY)
         val student: Student? =  studentId?.let { SupervisingStudents.findStudentById(it) }
         val avatarImageView = view.findViewById<ImageView>(R.id.dz8AvatarImageView)
 
@@ -57,7 +57,7 @@ class Dz8StudentDetailsFragment : Fragment() {
             } else {
                 SupervisingStudents.deleteStudentByIdFromList(studentId)
             }
-            listener?.onClickedDeleteStudent()
+            studentId?.let { it1 -> listener?.onClickedDeleteStudent(it1) }
         }
 
         view.findViewById<Button>(R.id.dz8editButton).setOnClickListener {
@@ -83,6 +83,6 @@ class Dz8StudentDetailsFragment : Fragment() {
 
     interface Listener {
         fun onClickedStudentEdit(id: String)
-        fun onClickedDeleteStudent()
+        fun onClickedDeleteStudent(id: String)
     }
 }

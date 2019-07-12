@@ -5,75 +5,63 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import by.itacademy.pvt.R
+import by.itacademy.pvt.dz6.SupervisingStudents
 
 class Dz8Activity : FragmentActivity(), Dz8StudentEditFragment.Listener, Dz8StudentListFragment.Listener,
     Dz8StudentDetailsFragment.Listener {
 
-    private var isLandScape: Boolean = false
+    private var isTabletMode: Boolean = false
 
-    private val containerDetails: Int
-        get() {
-            return if (isLandScape) {
-                R.id.dz8Conteiner2
-            } else {
-                R.id.dz8Conteiner1
-            }
-        }
+    private val d8Conteiner1 = R.id.dz8Conteiner1
+    private val d8Conteiner2 = R.id.dz8Conteiner2
+
+    private val transaction = supportFragmentManager.beginTransaction()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz8)
 
-        isLandScape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
-
         if (savedInstanceState == null) {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.dz8Conteiner1, Dz8StudentListFragment(), Dz8StudentListFragment.TAG)
-            transaction.commit()
+            createTransaction(R.id.dz8Conteiner1, Dz8StudentListFragment())
         }
+        isTabletMode = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
     }
 
-    override fun onClickedSaveStudent() {
-        val transaction = supportFragmentManager.beginTransaction()
-
-        (supportFragmentManager.findFragmentByTag(Dz8StudentListFragment.TAG) as? Dz8StudentListFragment)?.updateListRecycle()
-
-        if (isLandScape) {
-            supportFragmentManager.findFragmentByTag(Dz8StudentEditFragment.TAG)?.apply {transaction.remove(this) }
-        }
-        transaction.commit()
+    private fun choiseOrientation(isTabletMode: Boolean): Int {
+        val id: Int
+        if (isTabletMode) {
+            id = d8Conteiner2
+        } else id = d8Conteiner1
+        return id
     }
 
-    override fun clickOnAddStudent() {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(containerDetails, Dz8StudentEditFragment.getInstance(), Dz8StudentEditFragment.TAG)
-        transaction.commit()
-    }
-
-    override fun onStudentClicked(id: String) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(containerDetails, Dz8StudentDetailsFragment.getInstance(id), Dz8StudentDetailsFragment.TAG)
+    private fun createTransaction(idContainer: Int, fragment: Fragment) {
+        transaction.replace(idContainer, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
 
-    override fun onClickedStudentEdit(id: String) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(containerDetails, Dz8StudentEditFragment.getInstance(id), Dz8StudentEditFragment.TAG)
-        transaction.commit()
+    override fun onClickedSaveStudent() {
+        createTransaction(R.id.dz8Conteiner1, Dz8StudentListFragment())
     }
 
-    override fun onClickedDeleteStudent() {
-        val transaction = supportFragmentManager.beginTransaction()
+    override fun clickOnAddStudent() {
+        createTransaction(R.id.dz8Conteiner2, Dz8StudentEditFragment())
+    }
 
-        (supportFragmentManager.findFragmentByTag(Dz8StudentListFragment.TAG) as? Dz8StudentListFragment)?.updateListRecycle()
+    override fun onStudentClicked(id: String) {
+        createTransaction(choiseOrientation(isTabletMode), Dz8StudentDetailsFragment.getInstance(id))
+    }
 
-        if (isLandScape) {
-            supportFragmentManager.findFragmentByTag(Dz8StudentDetailsFragment.TAG)?.apply { transaction.remove(this) }
-            transaction.replace(R.id.dz8Conteiner2, Fragment())
-        } else {
-            supportFragmentManager.popBackStack()
-        }
+    override fun onClickedStudentEdit(id: String) {
+        createTransaction(choiseOrientation(isTabletMode), Dz8StudentEditFragment.getInstance(id))
+    }
+
+    override fun onClickedDeleteStudent(id: String) {
+        SupervisingStudents.deleteStudentByIdFromList(id)
+        transaction.replace(R.id.dz8Conteiner1, Dz8StudentListFragment())
+        supportFragmentManager.popBackStack()
         transaction.commit()
     }
 }

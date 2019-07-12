@@ -102,6 +102,7 @@ class Dz8StudentEditFragment : Fragment() {
             } else {
                 SupervisingStudents.upgradeStudentById(Student(student.id, name, age!!, url))
             }
+            listener?.onClickedSaveStudent()
         }
         listener?.onClickedSaveStudent()
     }
