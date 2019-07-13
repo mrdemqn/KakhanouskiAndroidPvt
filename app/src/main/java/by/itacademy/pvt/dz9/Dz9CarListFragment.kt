@@ -23,7 +23,7 @@ class Dz9CarListFragment : Fragment(), Dz9Adapter.ClickListener, CarRepositoryRe
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_dz9_car_list, container, false)
-        carRepository.getCarByCoordinate(CoordinateParams(Coordinate(150.0, 300.2), Coordinate(350.0, 250.0)), this)
+        carRepository.getCarByCoordinate(CoordinateParams(Coordinate(2342.0, 342.0), Coordinate(3242.0, 3453.0)), this)
 
         return view
     }
@@ -32,8 +32,8 @@ class Dz9CarListFragment : Fragment(), Dz9Adapter.ClickListener, CarRepositoryRe
         listener?.onCarClick(item)
     }
 
-    override fun onSuccess(list: List<Poi>) {
-        poiList.addAll(list)
+    override fun onSuccess(data: List<Poi>) {
+        poiList.addAll(data)
         callAdapter()
     }
 
@@ -48,11 +48,12 @@ class Dz9CarListFragment : Fragment(), Dz9Adapter.ClickListener, CarRepositoryRe
     }
 
     fun callAdapter() {
-        val dz9RecyclerView = view?.findViewById<RecyclerView>(R.id.dz9RecyclerView)
+        val dz9RecyclerView = view!!.findViewById<RecyclerView>(R.id.dz9RecyclerView)
         dz9RecyclerView?.setHasFixedSize(false)
+        dz9RecyclerView.isNestedScrollingEnabled = false
         dz9RecyclerView?.layoutManager = LinearLayoutManager(context)
         adapter = Dz9Adapter(poiList, this@Dz9CarListFragment)
-        dz9RecyclerView?.adapter = adapter
+        dz9RecyclerView.adapter = adapter
     }
 
     override fun onDetach() {

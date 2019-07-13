@@ -51,7 +51,7 @@ object NetProvider {
 
     fun provideApi(retrofit: Retrofit): Api {
         if (api == null) {
-        val api = retrofit.create<Api>(Api::class.java)
+        api = retrofit.create<Api>(Api::class.java)
         }
         return api!!
     }

@@ -9,6 +9,6 @@ interface CarRepository {
 }
 
 interface CarRepositoryResult {
-    fun onSuccess(list: List<Poi>)
+    fun onSuccess(data: List<Poi>)
     fun onError(throwable: Throwable)
 }
