@@ -64,6 +64,7 @@ class Dz8StudentDetailsFragment : Fragment() {
             if (student == null) {
                 Toast.makeText(context, errorId, Toast.LENGTH_SHORT).show()
             } else {
+                SupervisingStudents.findStudentById(studentId)
                 listener?.onClickedStudentEdit(studentId)
             }
         }

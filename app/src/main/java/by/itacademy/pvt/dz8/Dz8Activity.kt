@@ -12,11 +12,6 @@ class Dz8Activity : FragmentActivity(), Dz8StudentEditFragment.Listener, Dz8Stud
 
     private var isTabletMode: Boolean = false
 
-    private val d8Conteiner1 = R.id.dz8Conteiner1
-    private val d8Conteiner2 = R.id.dz8Conteiner2
-
-    private val transaction = supportFragmentManager.beginTransaction()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz8)
@@ -31,12 +26,14 @@ class Dz8Activity : FragmentActivity(), Dz8StudentEditFragment.Listener, Dz8Stud
     private fun choiseOrientation(isTabletMode: Boolean): Int {
         val id: Int
         if (isTabletMode) {
-            id = d8Conteiner2
-        } else id = d8Conteiner1
+            id = R.id.dz8Conteiner2
+        } else id = R.id.dz8Conteiner1
         return id
     }
 
     private fun createTransaction(idContainer: Int, fragment: Fragment) {
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
         transaction.replace(idContainer, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
@@ -55,11 +52,16 @@ class Dz8Activity : FragmentActivity(), Dz8StudentEditFragment.Listener, Dz8Stud
     }
 
     override fun onClickedStudentEdit(id: String) {
-        createTransaction(choiseOrientation(isTabletMode), Dz8StudentEditFragment.getInstance(id))
+        if (isTabletMode) {
+        createTransaction(R.id.dz8Conteiner2, Dz8StudentEditFragment.getInstance(id))
+        } else {
+            createTransaction(R.id.dz8Conteiner1, Dz8StudentEditFragment.getInstance(id))
+        }
     }
 
     override fun onClickedDeleteStudent(id: String) {
         SupervisingStudents.deleteStudentByIdFromList(id)
+        val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.dz8Conteiner1, Dz8StudentListFragment())
         supportFragmentManager.popBackStack()
         transaction.commit()
