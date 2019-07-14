@@ -57,15 +57,14 @@ class Dz8StudentDetailsFragment : Fragment() {
             } else {
                 SupervisingStudents.deleteStudentByIdFromList(studentId)
             }
-            studentId?.let { it1 -> listener?.onClickedDeleteStudent(it1) }
+            listener?.onClickedDeleteStudent()
         }
 
         view.findViewById<Button>(R.id.dz8editButton).setOnClickListener {
             if (student == null) {
                 Toast.makeText(context, errorId, Toast.LENGTH_SHORT).show()
             } else {
-                SupervisingStudents.findStudentById(studentId)
-                listener?.onClickedStudentEdit(studentId)
+                listener?.onClickedStudentEdit(ID_KEY)
             }
         }
     }
@@ -84,6 +83,6 @@ class Dz8StudentDetailsFragment : Fragment() {
 
     interface Listener {
         fun onClickedStudentEdit(id: String)
-        fun onClickedDeleteStudent(id: String)
+        fun onClickedDeleteStudent()
     }
 }

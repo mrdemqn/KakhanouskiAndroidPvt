@@ -13,6 +13,7 @@ import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.dz6.SupervisingStudents
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.activity_dz2.*
 import java.util.UUID
 
 private const val ID_KEY = "ID_KEY"
@@ -24,12 +25,14 @@ class Dz8StudentEditFragment : Fragment() {
     companion object {
         val TAG = Dz8StudentEditFragment::class.java.canonicalName!!
 
-        fun getInstance(id: String? = null): Dz8StudentEditFragment {
+        fun getInstance(id: String? = ID_KEY): Dz8StudentEditFragment {
             val fragment = Dz8StudentEditFragment()
 
-            val bundle = Bundle()
-            bundle.putString(ID_KEY, id)
-            fragment.arguments = bundle
+            if (id != null) {
+                val bundle = Bundle()
+                bundle.putString(ID_KEY, id)
+                fragment.arguments = bundle
+            }
             return fragment
         }
     }
@@ -104,7 +107,6 @@ class Dz8StudentEditFragment : Fragment() {
             }
             listener?.onClickedSaveStudent()
         }
-        listener?.onClickedSaveStudent()
     }
 
     override fun onAttach(context: Context) {

@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
@@ -38,9 +39,11 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
         fun getInstance(id: String? = null): Dz8StudentListFragment {
             val fragment = Dz8StudentListFragment()
 
-            val bundle = Bundle()
-            bundle.putString(ID_KEY, id)
-            fragment.arguments = bundle
+            if (id != null) {
+                val bundle = Bundle()
+                bundle.putString(ID_KEY, id)
+                fragment.arguments = bundle
+            }
             return fragment
         }
     }
@@ -90,11 +93,11 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
     override fun onStart() {
         super.onStart()
         dz8EditText.setText(sharPrefManager.getUserText())
+
     }
 
     override fun onStop() {
         super.onStop()
-
         sharPrefManager.saveUserText(dz8EditText.text.toString())
     }
 
