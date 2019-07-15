@@ -30,9 +30,6 @@ class Dz9MapsActivity : FragmentActivity(), Dz9CarListFragment.ClickListener, Ca
     private val carRepository: CarRepository = provideCarRepository()
     private val poiList: MutableList<Poi> = mutableListOf()
 
-    private lateinit var manager: FragmentManager
-    private lateinit var transaction: FragmentTransaction
-
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<FrameLayout>
 
     companion object {
@@ -45,8 +42,8 @@ class Dz9MapsActivity : FragmentActivity(), Dz9CarListFragment.ClickListener, Ca
 
         if (savedInstanceState == null) {
             val dz9Fragment = Dz9CarListFragment()
-            manager = supportFragmentManager
-            transaction = manager.beginTransaction()
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
             transaction.replace(R.id.dz9Container1, dz9Fragment)
             transaction.commit()
         }
