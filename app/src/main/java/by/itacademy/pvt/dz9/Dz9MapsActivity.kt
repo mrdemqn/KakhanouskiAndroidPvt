@@ -94,6 +94,7 @@ class Dz9MapsActivity : FragmentActivity(), Dz9CarListFragment.ClickListener, Ca
             val coord = LatLng(it.coordinate?.latitude!!, it.coordinate.longitude)
             map.addMarker(MarkerOptions().position(coord))
             builder.include(coord)
+            .rotation(it.heading!!.toFloat())
         }
 
         val bounds = builder.build()
