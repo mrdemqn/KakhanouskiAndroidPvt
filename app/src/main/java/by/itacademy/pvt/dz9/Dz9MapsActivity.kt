@@ -64,7 +64,6 @@ class Dz9MapsActivity : FragmentActivity(), Dz9CarListFragment.ClickListener, Ca
         map = googleMap
         map.mapType = GoogleMap.MAP_TYPE_HYBRID
         map.uiSettings.isZoomControlsEnabled = true
-
     }
 
     override fun onCarClick(item: Poi) {
