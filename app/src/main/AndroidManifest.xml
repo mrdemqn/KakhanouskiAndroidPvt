@@ -19,8 +19,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
-            android:name="by.itacademy.pvt.dz9.Dz9MapsActivity"
+            android:name="by.itacademy.pvt.dz1.Dz1MenuActivity"
             android:label="@string/title_activity_maps">
 
             <intent-filter>
@@ -40,5 +41,7 @@
         <activity android:name="by.itacademy.pvt.dz6.Dz6StudentListActivity" />
         <activity android:name="by.itacademy.pvt.dz6.Dz6StudentEditActivity" />
         <activity android:name="by.itacademy.pvt.dz6.Dz6StudentDetailsActivity" />
+        <activity android:name="by.itacademy.pvt.dz8.Dz8Activity" />
+        <activity android:name="by.itacademy.pvt.dz9.Dz9MapsActivity" />
     </application>
 </manifest>

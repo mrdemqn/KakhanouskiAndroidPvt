@@ -9,8 +9,11 @@ import by.itacademy.pvt.dz0.Dz0MainActivity
 import by.itacademy.pvt.dz2.Dz2Activity
 import by.itacademy.pvt.dz3.Dz3Activity
 import by.itacademy.pvt.dz4.Dz4Activity
+import by.itacademy.pvt.dz5.Dz5Activity
+import by.itacademy.pvt.dz5.dz5_sova.Dz5SovaActivity
 import by.itacademy.pvt.dz6.Dz6StudentListActivity
-import by.itacademy.pvt.dz8.Dz8StudentListFragment
+import by.itacademy.pvt.dz8.Dz8Activity
+import by.itacademy.pvt.dz9.Dz9MapsActivity
 
 class Dz1MenuActivity : Activity() {
 
@@ -42,6 +45,10 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz5()
             }
+        findViewById<View>(R.id.dzSixSovaButton)
+            .setOnClickListener {
+                viewDz5Sova()
+            }
         findViewById<View>(R.id.dzSevenButton)
             .setOnClickListener {
                 viewDz6()
@@ -51,7 +58,10 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz8()
             }
-
+        findViewById<View>(R.id.dzNineButton)
+            .setOnClickListener {
+                viewDz9()
+            }
     }
 
     private fun viewDz0() {
@@ -80,7 +90,12 @@ class Dz1MenuActivity : Activity() {
     }
 
     private fun viewDz5() {
-        val intent = Intent(this, Dz4Activity::class.java)
+        val intent = Intent(this, Dz5Activity::class.java)
+        startActivity(intent)
+    }
+
+    private fun viewDz5Sova() {
+        val intent = Intent(this, Dz5SovaActivity::class.java)
         startActivity(intent)
     }
 
@@ -90,7 +105,12 @@ class Dz1MenuActivity : Activity() {
     }
 
     private fun viewDz8() {
-        val intent = Intent(this, Dz8StudentListFragment::class.java)
+        val intent = Intent(this, Dz8Activity::class.java)
+        startActivity(intent)
+    }
+
+    private fun viewDz9() {
+        val intent = Intent(this, Dz9MapsActivity::class.java)
         startActivity(intent)
     }
 }

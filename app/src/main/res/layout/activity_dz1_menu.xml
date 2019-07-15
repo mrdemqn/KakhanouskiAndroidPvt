@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/back_dz"></ImageView>
+        android:src="@drawable/back_dz" />
 
     <TextView
         android:id="@+id/dzOneButton"
@@ -46,14 +46,29 @@
         android:text="@string/dz5_activity" />
 
     <TextView
+        android:id="@+id/dzSixSovaButton"
+        style="@style/MenuNavigationTextView"
+        android:layout_toEndOf="@+id/dzOneButton"
+        android:text="@string/dz_5_sova_activity" />
+
+    <TextView
         android:id="@+id/dzSevenButton"
         style="@style/MenuNavigationTextView"
-        android:layout_below="@+id/dzSixButton"
+        android:layout_toEndOf="@+id/dzOneButton"
+        android:layout_below="@+id/dzSixSovaButton"
         android:text="@string/dz6_activity" />
 
     <TextView
         android:id="@+id/dzEightButton"
         style="@style/MenuNavigationTextView"
-        android:layout_toEndOf="@+id/dzSevenButton"
+        android:layout_below="@+id/dzSevenButton"
+        android:layout_toEndOf="@+id/dzTwoButton"
         android:text="@string/dz8_activity" />
+
+    <TextView
+        android:id="@+id/dzNineButton"
+        style="@style/MenuNavigationTextView"
+        android:layout_below="@+id/dzEightButton"
+        android:layout_toEndOf="@+id/dzTwoButton"
+        android:text="@string/dz9_maps_activity" />
 </RelativeLayout>

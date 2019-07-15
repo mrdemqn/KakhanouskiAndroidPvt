@@ -11,8 +11,6 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import by.itacademy.pvt.R
 import by.itacademy.pvt.dz9.entity.Coordinate
 import by.itacademy.pvt.dz9.entity.CoordinateParams
@@ -92,9 +90,10 @@ class Dz9MapsActivity : FragmentActivity(), Dz9CarListFragment.ClickListener, Ca
         val builder = LatLngBounds.builder()
         poiList.forEach {
             val coord = LatLng(it.coordinate?.latitude!!, it.coordinate.longitude)
-            map.addMarker(MarkerOptions().position(coord))
+            map.addMarker(MarkerOptions().position(coord)
+                .rotation(it.heading!!.toFloat()))
             builder.include(coord)
-            .rotation(it.heading!!.toFloat())
+
         }
 
         val bounds = builder.build()
