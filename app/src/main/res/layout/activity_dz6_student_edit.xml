@@ -7,12 +7,12 @@
     android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dz6UrlLinearLayout"
+        android:id="@+id/dz8UrlLinearLayout"
         app:errorEnabled="true"
         style="@style/Dz6LinearLayoutStudentEdit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dz6UrlEditText"
+            android:id="@+id/dz8UrlEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -22,11 +22,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dz6NameLinearLayout"
+        android:id="@+id/dz8NameLinearLayout"
         style="@style/Dz6LinearLayoutStudentEdit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dz6NameEditText"
+            android:id="@+id/dz8NameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -36,11 +36,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dz6AgeLinearLayout"
+        android:id="@+id/dz8AgeLinearLayout"
         style="@style/Dz6LinearLayoutStudentEdit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dz6AgeEditText"
+            android:id="@+id/dz8AgeEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -50,7 +50,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/dz6SaveButton"
+        android:id="@+id/dz8SaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
