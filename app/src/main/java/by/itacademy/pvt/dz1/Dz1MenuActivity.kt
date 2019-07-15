@@ -10,6 +10,7 @@ import by.itacademy.pvt.dz2.Dz2Activity
 import by.itacademy.pvt.dz3.Dz3Activity
 import by.itacademy.pvt.dz4.Dz4Activity
 import by.itacademy.pvt.dz6.Dz6StudentListActivity
+import by.itacademy.pvt.dz8.Dz8StudentListFragment
 
 class Dz1MenuActivity : Activity() {
 
@@ -44,35 +45,52 @@ class Dz1MenuActivity : Activity() {
         findViewById<View>(R.id.dzSevenButton)
             .setOnClickListener {
                 viewDz6()
-           }
+            }
+
+        findViewById<View>(R.id.dzEightButton)
+            .setOnClickListener {
+                viewDz8()
+            }
 
     }
+
     private fun viewDz0() {
         val intent = Intent(this, Dz0MainActivity::class.java)
         startActivity(intent)
     }
+
     private fun viewDz1() {
         val intent = Intent(this, Dz1FlagsActivity::class.java)
         startActivity(intent)
     }
+
     private fun viewDz2() {
         val intent = Intent(this, Dz2Activity::class.java)
         startActivity(intent)
     }
+
     private fun viewDz3() {
         val intent = Intent(this, Dz3Activity::class.java)
         startActivity(intent)
     }
+
     private fun viewDz4() {
         val intent = Intent(this, Dz4Activity::class.java)
         startActivity(intent)
     }
+
     private fun viewDz5() {
         val intent = Intent(this, Dz4Activity::class.java)
         startActivity(intent)
     }
+
     private fun viewDz6() {
         val intent = Intent(this, Dz6StudentListActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun viewDz8() {
+        val intent = Intent(this, Dz8StudentListFragment::class.java)
         startActivity(intent)
     }
 }

@@ -52,4 +52,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="dz9_lat">Latitude</string>
     <string name="dz9_lng">Longitude</string>
+    <string name="dz8_activity">ДЗ№8</string>
 </resources>

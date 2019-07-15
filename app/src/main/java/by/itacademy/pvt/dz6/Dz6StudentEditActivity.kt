@@ -27,13 +27,13 @@ class Dz6StudentEditActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dz6_student_edit)
 
-        val urlEditText = findViewById<TextInputEditText>(R.id.dz6UrlEditText)
-        val nameEditText = findViewById<TextInputEditText>(R.id.dz6NameEditText)
-        val ageEditText = findViewById<TextInputEditText>(R.id.dz6AgeEditText)
+        val urlEditText = findViewById<TextInputEditText>(R.id.dz8UrlEditText)
+        val nameEditText = findViewById<TextInputEditText>(R.id.dz8NameEditText)
+        val ageEditText = findViewById<TextInputEditText>(R.id.dz8AgeEditText)
 
-        val urlLinearLayout = findViewById<TextInputLayout>(R.id.dz6UrlLinearLayout)
-        val nameLinearLayout = findViewById<TextInputLayout>(R.id.dz6NameLinearLayout)
-        val ageLinearLayout = findViewById<TextInputLayout>(R.id.dz6AgeLinearLayout)
+        val urlLinearLayout = findViewById<TextInputLayout>(R.id.dz8UrlLinearLayout)
+        val nameLinearLayout = findViewById<TextInputLayout>(R.id.dz8NameLinearLayout)
+        val ageLinearLayout = findViewById<TextInputLayout>(R.id.dz8AgeLinearLayout)
 
         val errorCannotBeBlank = resources.getString(R.string.dz6_error_cannot_be_blank)
         val errorUrlIsInvalid = resources.getString(R.string.dz6_error_url_is_invalid)
@@ -47,7 +47,7 @@ class Dz6StudentEditActivity : Activity() {
             ageEditText.setText(student.age.toString())
         }
 
-        findViewById<Button>(R.id.dz6SaveButton).setOnClickListener {
+        findViewById<Button>(R.id.dz8SaveButton).setOnClickListener {
             val url = urlEditText.text.toString().trim()
             val name = nameEditText.text.toString().trim()
             val age = ageEditText.text.toString().toIntOrNull()

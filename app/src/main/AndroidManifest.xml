@@ -19,27 +19,26 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <activity
             android:name="by.itacademy.pvt.dz9.Dz9MapsActivity"
             android:label="@string/title_activity_maps">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dz0.Dz0MainActivity" />
-        <activity android:name=".dz1.Dz1FlagsActivity" />
-        <activity android:name=".dz2.Dz2LoginPassActivity" />
-        <activity android:name=".dz2.Dz2Activity" />
-        <activity android:name=".dz3.Dz3Activity" />
-        <activity android:name=".dz4.Dz4Activity" />
-        <activity android:name=".dz5.dz5_sova.Dz5SovaActivity" />
-        <activity android:name=".dz5.Dz5Activity" />
-        <activity android:name=".dz6.Dz6StudentListActivity" />
-        <activity android:name=".dz6.Dz6StudentEditActivity" />
-        <activity android:name=".dz6.Dz6StudentDetailsActivity" />
+        <activity android:name="by.itacademy.pvt.dz0.Dz0MainActivity" />
+        <activity android:name="by.itacademy.pvt.dz1.Dz1FlagsActivity" />
+        <activity android:name="by.itacademy.pvt.dz2.Dz2LoginPassActivity" />
+        <activity android:name="by.itacademy.pvt.dz2.Dz2Activity" />
+        <activity android:name="by.itacademy.pvt.dz3.Dz3Activity" />
+        <activity android:name="by.itacademy.pvt.dz4.Dz4Activity" />
+        <activity android:name="by.itacademy.pvt.dz5.dz5_sova.Dz5SovaActivity" />
+        <activity android:name="by.itacademy.pvt.dz5.Dz5Activity" />
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentListActivity" />
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentEditActivity" />
+        <activity android:name="by.itacademy.pvt.dz6.Dz6StudentDetailsActivity" />
     </application>
-
 </manifest>

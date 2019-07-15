@@ -31,15 +31,15 @@ class Dz6StudentDetailsActivity : Activity() {
 
         val studentId = intent.getStringExtra(STUDENT_ID)
         val student = SupervisingStudents.findStudentById(studentId)
-        val avatarImageView = findViewById<ImageView>(R.id.dz6AvatarImageView)
+        val avatarImageView = findViewById<ImageView>(R.id.dz8AvatarImageView)
 
         if (student != null) {
             loadCircleImage(this@Dz6StudentDetailsActivity, student.imageUrl, avatarImageView)
-            findViewById<TextView>(R.id.dz6NameTextView).text = student.name
-            findViewById<TextView>(R.id.dz6AgeTextView).text = student.age.toString()
+            findViewById<TextView>(R.id.dz8NameTextView).text = student.name
+            findViewById<TextView>(R.id.dz8AgeTextView).text = student.age.toString()
         }
 
-        findViewById<Button>(R.id.deleteButton).setOnClickListener {
+        findViewById<Button>(R.id.dz8deleteButton).setOnClickListener {
             if (student == null) {
                 Toast.makeText(this, errorId, Toast.LENGTH_SHORT).show()
             } else {
@@ -48,7 +48,7 @@ class Dz6StudentDetailsActivity : Activity() {
             finish()
         }
 
-        findViewById<Button>(R.id.editButton).setOnClickListener {
+        findViewById<Button>(R.id.dz8editButton).setOnClickListener {
             if (student == null) {
                 Toast.makeText(this, errorId, Toast.LENGTH_SHORT).show()
             } else {
