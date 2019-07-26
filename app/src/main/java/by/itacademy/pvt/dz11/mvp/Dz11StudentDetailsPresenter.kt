@@ -10,7 +10,7 @@ class Dz11StudentDetailsPresenter : Dz11DetailsPresenter {
         this.view = view as Dz11StudentDetailsView
     }
 
-    override fun onViewDestroyed() {
+    override fun viewDestroyed() {
         this.view = null
     }
 
@@ -19,7 +19,7 @@ class Dz11StudentDetailsPresenter : Dz11DetailsPresenter {
         view?.showStudent(student)
     }
 
-    override fun deleteStudentById(id: String) {
+    override fun deleteById(id: String) {
         SupervisingStudents.deleteStudentByIdFromList(id)
     }
 }

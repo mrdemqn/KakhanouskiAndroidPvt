@@ -9,7 +9,7 @@ class Dz11StudentListPresenter : Dz11ListPresenter {
         this.view = view as Dz11StudentListView
     }
 
-    override fun onViewDestroyed() {
+    override fun viewDestroyed() {
         this.view = null
     }
 
@@ -17,7 +17,7 @@ class Dz11StudentListPresenter : Dz11ListPresenter {
         view?.showSearchResults(SupervisingStudents.searchByName(name))
     }
 
-    override fun getStudentsList() {
+    override fun getStudentList() {
         view?.showStudentsList(SupervisingStudents.getStudents())
     }
 }

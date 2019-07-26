@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
-import by.itacademy.pvt.dz6.SupervisingStudents
 import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.utils.loadCircleImage
 
@@ -62,7 +60,7 @@ class Dz11StudentDetailsFragment : Fragment(), Dz11StudentDetailsView {
 
         view.findViewById<Button>(R.id.dz8deleteButton).setOnClickListener {
             studentId?.apply {
-                detailsPresenter.deleteStudentById(this)
+                detailsPresenter.deleteById(this)
                 listener?.onClickedDeleteStudent()
             }
         }
@@ -97,7 +95,7 @@ class Dz11StudentDetailsFragment : Fragment(), Dz11StudentDetailsView {
     }
 
     override fun onDestroyView() {
-        detailsPresenter.onViewDestroyed()
+        detailsPresenter.viewDestroyed()
         super.onDestroyView()
     }
 

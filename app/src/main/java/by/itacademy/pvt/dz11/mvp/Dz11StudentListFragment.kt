@@ -91,7 +91,7 @@ class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz11St
         view.findViewById<ImageView>(R.id.dz6AddStudent).setOnClickListener {
             listener?.clickOnAddStudent()
         }
-        listPresenter.getStudentsList()
+        listPresenter.getStudentList()
     }
 
     override fun showSearchResults(list: List<Student>) {
@@ -143,7 +143,7 @@ class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz11St
     }
 
     override fun onDestroyView() {
-        listPresenter.onViewDestroyed()
+        listPresenter.viewDestroyed()
         super.onDestroyView()
     }
 

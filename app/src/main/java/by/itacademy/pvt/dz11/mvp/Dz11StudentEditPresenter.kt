@@ -11,7 +11,7 @@ class Dz11StudentEditPresenter : Dz11EditPresenter {
         this.view = view as Dz11StudentEditView
     }
 
-    override fun onViewDestroyed() {
+    override fun viewDestroyed() {
         this.view = null
     }
 
@@ -19,7 +19,7 @@ class Dz11StudentEditPresenter : Dz11EditPresenter {
         SupervisingStudents.addNewStudent(Student(UUID.randomUUID().toString(), name, age, url))
     }
 
-    override fun upgrateStudent(id: String, name: String, age: Int, url: String) {
+    override fun upgradeStudent(id: String, name: String, age: Int, url: String) {
         SupervisingStudents.upgradeStudentById(Student(id, name, age, url))
     }
 

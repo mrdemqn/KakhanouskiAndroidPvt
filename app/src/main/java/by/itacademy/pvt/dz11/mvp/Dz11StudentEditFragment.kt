@@ -123,7 +123,7 @@ class Dz11StudentEditFragment : Fragment(), Dz11StudentEditView {
         if (studentId == null) {
             editPresenter.addNewStudent(name, age!!, url)
         } else {
-            editPresenter.upgrateStudent(studentId!!, name, age!!, url)
+            editPresenter.upgradeStudent(studentId!!, name, age!!, url)
         }
         listener?.onClickedSaveStudent()
     }
