@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import by.itacademy.pvt.R
-import by.itacademy.pvt.dz9.entity.Coordinate
-import by.itacademy.pvt.dz9.entity.CoordinateParams
 import by.itacademy.pvt.dz9.entity.Poi
+import by.itacademy.pvt.dz9.entity.CoordinateParams
+import by.itacademy.pvt.dz9.entity.Coordinate
 
 class Dz9CarListFragment : Fragment(), Dz9Adapter.ClickListener, CarRepositoryResult {
 

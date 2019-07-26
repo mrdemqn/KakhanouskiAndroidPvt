@@ -1,4 +1,7 @@
 package by.itacademy.pvt.dz11.mvp
 
-class Dz11EditPresenter {
+interface Dz11EditPresenter : Dz11BasePresenter {
+    fun getStudentById(id: String)
+    fun addNewStudent(name: String, age: Int, url: String)
+    fun upgrateStudent(id: String, name: String, age: Int, url: String)
 }

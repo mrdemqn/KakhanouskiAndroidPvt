@@ -9,11 +9,11 @@ import android.webkit.URLUtil
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
+import by.itacademy.pvt.dz11.mvp.Dz11StudentEditFragment
 import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.dz6.SupervisingStudents
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.android.synthetic.main.activity_dz2.*
 import java.util.UUID
 
 private const val ID_KEY = "ID_KEY"

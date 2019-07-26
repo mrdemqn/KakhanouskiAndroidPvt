@@ -1,4 +1,6 @@
 package by.itacademy.pvt.dz11.mvp
 
-class Dz11BasePrsenter0 {
+interface Dz11BasePresenter {
+    fun onViewDestroyed()
+    fun setView(view: Dz11BaseView)
 }

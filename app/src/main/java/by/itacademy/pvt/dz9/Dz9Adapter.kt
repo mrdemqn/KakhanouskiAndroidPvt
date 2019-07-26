@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import by.itacademy.pvt.R
 import androidx.recyclerview.widget.RecyclerView
+import by.itacademy.pvt.dz9.Dz9CustomViewHolder
 import by.itacademy.pvt.dz9.entity.Poi
 
 class Dz9Adapter(private var items: List<Poi>, private var listener: ClickListener) :

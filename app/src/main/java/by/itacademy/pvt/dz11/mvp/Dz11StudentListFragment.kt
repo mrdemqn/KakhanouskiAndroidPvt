@@ -22,7 +22,7 @@ import kotlin.concurrent.schedule
 
 private const val ID_KEY = "ID_KEY"
 
-class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
+class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz11StudentListView {
 
     private var listener: Listener? = null
 
@@ -31,12 +31,13 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
 
     private lateinit var dz8EditText: EditText
     private lateinit var sharPrefManager: AppPrefManager
+    private lateinit var listPresenter: Dz11ListPresenter
 
     companion object {
-        val TAG = Dz8StudentListFragment::class.java.canonicalName!!
+        val TAG = Dz11StudentListFragment::class.java.canonicalName!!
 
-        fun getInstance(id: String? = null): Dz8StudentListFragment {
-            val fragment = Dz8StudentListFragment()
+        fun getInstance(id: String? = null): Dz11StudentListFragment {
+            val fragment = Dz11StudentListFragment()
 
             if (id != null) {
                 val bundle = Bundle()
@@ -55,6 +56,9 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
         sharPrefManager = AppPrefManager(view.context)
         dz8EditText = view.findViewById(R.id.dz6SearchEditText)
         dz8EditText.setText(sharPrefManager.getUserText())
+
+        listPresenter = Dz11StudentListPresenter()
+        listPresenter.setView(this)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.dz6StListRecycleView)
         recyclerView.setHasFixedSize(true)
@@ -87,6 +91,15 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
         view.findViewById<ImageView>(R.id.dz6AddStudent).setOnClickListener {
             listener?.clickOnAddStudent()
         }
+        listPresenter.getStudentsList()
+    }
+
+    override fun showSearchResults(list: List<Student>) {
+        adapterDz8List.updateList(list)
+    }
+
+    override fun showStudentsList(list: List<Student>) {
+        adapterDz8List.updateList(list)
     }
 
     override fun onStart() {
@@ -126,7 +139,12 @@ class Dz8StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener {
     }
 
     private fun executeSearch() {
-        adapterDz8List.updateList(SupervisingStudents.searchByName(searchText))
+        listPresenter.searchByName(searchText)
+    }
+
+    override fun onDestroyView() {
+        listPresenter.onViewDestroyed()
+        super.onDestroyView()
     }
 
     interface Listener {

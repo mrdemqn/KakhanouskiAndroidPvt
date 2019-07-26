@@ -17,15 +17,23 @@ import by.itacademy.pvt.utils.loadCircleImage
 
 private const val ID_KEY = "ID_KEY"
 
-class Dz8StudentDetailsFragment : Fragment() {
+class Dz11StudentDetailsFragment : Fragment(), Dz11StudentDetailsView {
 
     private var listener: Listener? = null
 
-    companion object {
-        val TAG  = Dz8StudentDetailsFragment::class.java.canonicalName!!
+    private lateinit var detailsPresenter: Dz11DetailsPresenter
 
-        fun getInstance(id: String): Dz8StudentDetailsFragment {
-            val fragment = Dz8StudentDetailsFragment()
+    private var studentId: String? = null
+
+    private lateinit var avatarImageView: ImageView
+    private lateinit var nameTextView: TextView
+    private lateinit var ageTextView: TextView
+
+    companion object {
+        val TAG  = Dz11StudentDetailsFragment::class.java.canonicalName!!
+
+        fun getInstance(id: String): Dz11StudentDetailsFragment {
+            val fragment = Dz11StudentDetailsFragment()
 
             val bundle = Bundle()
             bundle.putString(ID_KEY, id)
@@ -39,33 +47,40 @@ class Dz8StudentDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        detailsPresenter = Dz11StudentDetailsPresenter()
+        detailsPresenter.setView(this)
+
         val errorId = resources.getString(R.string.dz6_error_id)
 
-        val studentId = arguments?.getString(ID_KEY)
-        val student: Student? =  studentId?.let { SupervisingStudents.findStudentById(it) }
-        val avatarImageView = view.findViewById<ImageView>(R.id.dz8AvatarImageView)
+        studentId = arguments?.getString(ID_KEY)
 
-        if (student != null) {
-            context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
-            view.findViewById<TextView>(R.id.dz8NameTextView).text = student.name
-            view.findViewById<TextView>(R.id.dz8AgeTextView).text = student.age.toString()
-        }
+        avatarImageView = view.findViewById(R.id.dz8AvatarImageView)
+        nameTextView = view.findViewById(R.id.dz8NameTextView)
+        ageTextView = view.findViewById(R.id.dz8AgeTextView)
+
+        studentId?.apply { detailsPresenter.getStudentById(this) }
 
         view.findViewById<Button>(R.id.dz8deleteButton).setOnClickListener {
-            if (student == null) {
-                Toast.makeText(context, errorId, Toast.LENGTH_SHORT).show()
-            } else {
-                SupervisingStudents.deleteStudentByIdFromList(studentId)
+            studentId?.apply {
+                detailsPresenter.deleteStudentById(this)
+                listener?.onClickedDeleteStudent()
             }
-            listener?.onClickedDeleteStudent()
         }
 
         view.findViewById<Button>(R.id.dz8editButton).setOnClickListener {
-            if (student == null) {
-                Toast.makeText(context, errorId, Toast.LENGTH_SHORT).show()
-            } else {
-                listener?.onClickedStudentEdit(ID_KEY)
+            studentId?.apply {
+                listener?.onClickedStudentEdit(this)
             }
+        }
+    }
+
+    override fun showStudent(student: Student?) {
+        if (student == null) {
+            listener?.completeFragmentWithAnError()
+        } else {
+            context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
+            ageTextView.text = student.age.toString()
+            nameTextView.text = student.name
         }
     }
 
@@ -81,8 +96,14 @@ class Dz8StudentDetailsFragment : Fragment() {
         listener = null
     }
 
+    override fun onDestroyView() {
+        detailsPresenter.onViewDestroyed()
+        super.onDestroyView()
+    }
+
     interface Listener {
         fun onClickedStudentEdit(id: String)
         fun onClickedDeleteStudent()
+        fun completeFragmentWithAnError()
     }
 }

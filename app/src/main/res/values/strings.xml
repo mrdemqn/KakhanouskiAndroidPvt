@@ -55,4 +55,6 @@
     <string name="dz8_activity">ДЗ№8</string>
     <string name="dz9_maps_activity">ДЗ№9</string>
     <string name="dz_5_sova_activity">ДЗ№5Сова</string>
+    <string name="dz11activity_mpv">ДЗ№11MPV</string>
+    <string name="dz11activity_mvvp">ДЗ№11MVVP</string>
 </resources>

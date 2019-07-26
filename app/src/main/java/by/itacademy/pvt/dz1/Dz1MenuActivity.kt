@@ -12,6 +12,8 @@ import by.itacademy.pvt.dz4.Dz4Activity
 import by.itacademy.pvt.dz5.Dz5Activity
 import by.itacademy.pvt.dz5.dz5_sova.Dz5SovaActivity
 import by.itacademy.pvt.dz6.Dz6StudentListActivity
+import by.itacademy.pvt.dz11.mvp.Dz11Activity
+import by.itacademy.pvt.dz11.mvvp.Dz11MapsActivity
 import by.itacademy.pvt.dz8.Dz8Activity
 import by.itacademy.pvt.dz9.Dz9MapsActivity
 
@@ -62,7 +64,16 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz9()
             }
+        findViewById<View>(R.id.dz11MVPButton)
+            .setOnClickListener {
+                viewDz11MVP()
+            }
+        findViewById<View>(R.id.dz11MVVPButton)
+            .setOnClickListener {
+                viewDz11MVVP()
+            }
     }
+
 
     private fun viewDz0() {
         val intent = Intent(this, Dz0MainActivity::class.java)
@@ -111,6 +122,16 @@ class Dz1MenuActivity : Activity() {
 
     private fun viewDz9() {
         val intent = Intent(this, Dz9MapsActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun viewDz11MVP() {
+        val intent = Intent(this, Dz11Activity::class.java)
+        startActivity(intent)
+    }
+
+    private fun viewDz11MVVP() {
+        val intent = Intent(this, Dz11MapsActivity::class.java)
         startActivity(intent)
     }
 }

@@ -1,4 +1,4 @@
-package by.itacademy.pvt.dz11.mvvm
+package by.itacademy.pvt.dz11.mvvp
 
 import android.os.Bundle
 import android.view.LayoutInflater

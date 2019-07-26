@@ -1,9 +1,9 @@
 package by.itacademy.pvt.dz9
 
-import by.itacademy.pvt.dz9.entity.CarResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
+import by.itacademy.pvt.dz9.entity.CarResponse
 
 interface Api {
 
