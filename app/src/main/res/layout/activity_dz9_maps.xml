@@ -10,7 +10,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="by.itacademy.pvt.dz9.Dz9MapsActivity" />
+        tools:context="by.itacademy.pvt.dz11.mvvp.Dz11MapsActivity" />
 
     <FrameLayout
         android:id="@+id/dz9Container1"

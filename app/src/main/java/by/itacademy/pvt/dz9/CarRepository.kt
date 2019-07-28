@@ -1,7 +1,7 @@
 package by.itacademy.pvt.dz9
 
-import by.itacademy.pvt.dz9.entity.CoordinateParams
 import by.itacademy.pvt.dz9.entity.Poi
+import by.itacademy.pvt.dz9.entity.CoordinateParams
 
 interface CarRepository {
 

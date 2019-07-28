@@ -18,17 +18,12 @@ object NetProvider {
     }
 
     fun provideOkHttp(): OkHttpClient {
-
-
         val okhttpBuilder = OkHttpClient.Builder()
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
             okhttpBuilder.addInterceptor(logging)
         }
-
-        //okhttpBuilder.connectTimeout(5, TimeUnit.SECONDS) //Ожидание ответа от сервера. Если время кончилось, то ошибка
-
         val okhttpClient = okhttpBuilder.build()
 
         return okhttpClient
