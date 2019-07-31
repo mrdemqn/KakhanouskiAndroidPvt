@@ -1,6 +1,8 @@
 package by.itacademy.pvt.dz12
 
+import io.reactivex.Completable
 import io.reactivex.Observable
+import by.itacademy.pvt.dz6.Student
 
 interface StudentRepository {
 
@@ -8,7 +10,11 @@ interface StudentRepository {
 
     fun getById(id: String) : Observable<Student>
 
-    fun createOrUpdate(student: Student) : Observable<Boolean>
+    fun create(student: Student) : Completable
 
-    fun delete(id: String) : Observable<Boolean>
+    fun upgrade(student: Student) : Completable
+
+    fun delete(id: String) : Completable
+
+    fun searchByName(name: String, pageSize: Int, offset: Int): Observable<MutableList<Student>>
 }

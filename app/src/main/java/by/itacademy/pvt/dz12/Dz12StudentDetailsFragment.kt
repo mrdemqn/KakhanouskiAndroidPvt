@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
 import by.itacademy.pvt.dz6.Student
@@ -21,11 +19,11 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
 
     private lateinit var detailsPresenter: Dz12DetailsPresenter
 
-    private var studentId: String? = null
-
     private lateinit var avatarImageView: ImageView
     private lateinit var nameTextView: TextView
     private lateinit var ageTextView: TextView
+    private lateinit var progressBar: ProgressBar
+    private lateinit var studentDetails: ScrollView
 
     companion object {
         val TAG  = Dz12StudentDetailsFragment::class.java.canonicalName!!
@@ -45,12 +43,9 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        detailsPresenter = Dz12StudentDetailsPresenter()
-        detailsPresenter.setView(this)
-
         val errorId = resources.getString(R.string.dz6_error_id)
 
-        studentId = arguments?.getString(ID_KEY)
+        val studentId = arguments?.getString(ID_KEY, "")
 
         avatarImageView = view.findViewById(R.id.dz8AvatarImageView)
         nameTextView = view.findViewById(R.id.dz8NameTextView)
@@ -58,10 +53,16 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
 
         studentId?.apply { detailsPresenter.getStudentById(this) }
 
+        if (studentId == null)
+            end()
+        else {
+            detailsPresenter = Dz12StudentDetailsPresenter(studentId)
+            detailsPresenter.setView(this)
+        }
+
         view.findViewById<Button>(R.id.dz8deleteButton).setOnClickListener {
             studentId?.apply {
                 detailsPresenter.deleteById(this)
-                listener?.onClickedDeleteStudent()
             }
         }
 
@@ -72,13 +73,17 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
         }
     }
 
+
+
     override fun showStudent(student: Student?) {
         if (student == null) {
             listener?.completeFragmentWithAnError()
         } else {
-            context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
+            studentDetails.visibility = View.GONE
+            progressBar.visibility = View.VISIBLE
+            loadCircleImage(student.imageUrl, avatarImageView)
             ageTextView.text = student.age.toString()
-            nameTextView.text = student.name
+            nameTextView.text= student.name
         }
     }
 
@@ -90,8 +95,9 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
     }
 
     override fun onDetach() {
-        super.onDetach()
+        detailsPresenter.viewDestroyed()
         listener = null
+        super.onDetach()
     }
 
     override fun onDestroyView() {
@@ -99,9 +105,26 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
         super.onDestroyView()
     }
 
+    override fun showProgressBar() {
+        progressBar.visibility = View.VISIBLE
+        studentDetails.visibility = View.GONE
+    }
+
+    override fun end() {
+        listener?.change()
+    }
+
+    override fun showError(error: String) {
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun back() {
+        activity?.supportFragmentManager?.popBackStack()
+    }
+
     interface Listener {
+        fun change()
         fun onClickedStudentEdit(id: String)
-        fun onClickedDeleteStudent()
         fun completeFragmentWithAnError()
     }
 }

@@ -1,22 +1,32 @@
 package by.itacademy.pvt.dz12
 
+import io.reactivex.Completable
 import io.reactivex.Observable
+import by.itacademy.pvt.dz6.Student
 
-class StudentRepositoryRemote(private val api: StidentApi): StudentRepository {
+class StudentRepositoryRemote(private val studentApi: StudentApi): StudentRepository {
 
     override fun get(pageSize: Int, offset: Int): Observable<MutableList<Student>> {
-        return api.getStudents(pageSize, offset)
+        return studentApi.getStudents(pageSize, offset)
     }
 
     override fun getById(id: String): Observable<Student> {
-
+        return studentApi.getById(id)
     }
 
-    override fun createOrUpdate(student: Student): Observable<Boolean> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun create(student: Student): Completable {
+        return studentApi.create(student)
     }
 
-    override fun delete(id: String): Observable<Boolean> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun upgrade(student: Student): Completable {
+        return studentApi.upgrade(student.id, student)
+    }
+
+    override fun delete(id: String): Completable {
+        return studentApi.delete(id)
+    }
+
+    override fun searchByName(name: String, pageSize: Int, offset: Int): Observable<MutableList<Student>> {
+        return studentApi.searchByName(pageSize, offset, "name LIKE '%$name%'")
     }
 }
