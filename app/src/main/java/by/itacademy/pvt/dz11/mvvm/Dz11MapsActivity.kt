@@ -1,4 +1,4 @@
-package by.itacademy.pvt.dz11.mvvp
+package by.itacademy.pvt.dz11.mvvm
 
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
@@ -54,6 +54,10 @@ class Dz11MapsActivity : FragmentActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_dz9_maps)
 
         viewModel = ViewModelProviders.of(this).get(ViewModel::class.java)
+
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
 
         if (savedInstanceState == null) {
             val dz9Fragment = Dz11CarListFragment()
@@ -192,6 +196,7 @@ class Dz11MapsActivity : FragmentActivity(), OnMapReadyCallback {
         mapView.onDestroy()
         viewModel.state.removeObserver(obsrverState)
         viewModel.extremeSelectedPoi.removeObserver(observerExtremeItem)
+        viewModel.disposable?.dispose()
     }
 
     override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
