@@ -85,4 +85,10 @@
         android:layout_below="@+id/dz11MVPButton"
         android:layout_toEndOf="@+id/dzTwoButton"
         android:text="@string/dz11activity_mvvp" />
+
+    <TextView
+        android:id="@+id/dzTimer"
+        style="@style/MenuNavigationTextView"
+        android:layout_toEndOf="@+id/dzSixSovaButton"
+        android:text="@string/timer_activity" />
 </RelativeLayout>

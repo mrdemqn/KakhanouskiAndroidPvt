@@ -20,10 +20,10 @@ class ViewModel : ViewModel() {
     var disposable: Disposable? = null
 
     val state: MutableLiveData<CarRepositoryState> by lazy(LazyThreadSafetyMode.NONE)
-    { MutableLiveData() }
+    { MutableLiveData<CarRepositoryState>() }
 
     val extremeSelectedPoi: MutableLiveData<Poi> by lazy(LazyThreadSafetyMode.NONE)
-    { MutableLiveData() }
+    { MutableLiveData<Poi>() }
 
     init {
         disposable = carRepository
