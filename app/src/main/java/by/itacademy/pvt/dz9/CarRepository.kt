@@ -7,8 +7,7 @@ import by.itacademy.pvt.dz9.entity.CarResponse
 
 interface CarRepository {
 
-    fun getCarByCoordinate(params: CoordinateParams, listener: CarRepositoryResult)
-    fun getCar(params: CoordinateParams) : Single<CarResponse>
+    fun getCarByCoordinate(params: CoordinateParams) : Single<CarResponse>
 }
 
 interface CarRepositoryResult {

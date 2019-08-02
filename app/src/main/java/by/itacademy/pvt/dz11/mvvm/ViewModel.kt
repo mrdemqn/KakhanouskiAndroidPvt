@@ -27,7 +27,7 @@ class ViewModel : ViewModel() {
 
     init {
         disposable = carRepository
-            .getCar(
+            .getCarByCoordinate(
                 CoordinateParams(
                 Coordinate(2342.0, 342.0),
                 Coordinate(3242.0, 3453.0)))
