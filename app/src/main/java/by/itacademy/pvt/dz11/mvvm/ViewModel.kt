@@ -31,7 +31,7 @@ class ViewModel : ViewModel() {
                 CoordinateParams(
                 Coordinate(2342.0, 342.0),
                 Coordinate(3242.0, 3453.0)))
-            .subscribeOn(newThread())
+            .subscribeOn(io())
             .observeOn(mainThread())
             .subscribe({itCarResponse ->
                 data = itCarResponse.poiList
@@ -44,5 +44,10 @@ class ViewModel : ViewModel() {
 
     fun clickByCar(item: Poi) {
         extremeSelectedPoi.value = item
+    }
+
+    override fun onCleared() {
+        disposable?.dispose()
+        super.onCleared()
     }
 }

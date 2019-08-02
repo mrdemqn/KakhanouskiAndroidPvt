@@ -22,7 +22,6 @@ class TimerActivity : AppCompatActivity() {
 
         val tim = resources.getString(R.string.timer123)
 
-
         val disposable: Disposable = Observable
             .interval(1, TimeUnit.SECONDS)
             .filter { t -> t % 2 == 0L }
