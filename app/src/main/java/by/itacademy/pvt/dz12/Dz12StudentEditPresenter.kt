@@ -1,11 +1,11 @@
 package by.itacademy.pvt.dz12
 
-import by.itacademy.pvt.dz6.SupervisingStudents
 import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.dz9.provideStudentRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import java.util.*
 
 class Dz12StudentEditPresenter : Dz12EditPresenter {
     private var view: Dz12StudentEditView? = null
@@ -22,48 +22,55 @@ class Dz12StudentEditPresenter : Dz12EditPresenter {
         this.view = null
     }
 
-    override fun addNewStudent(id: String, name: String, age: Int, url: String) {
-        view?.showProgressBar()
+    override fun addNewStudent(url: String, name: String, age: Int) {
         disposable = repository
-            .getById(id)
+            .create(
+                Student(
+                    id = UUID.randomUUID().toString(),
+                    imageUrl = url,
+                    name = name,
+                    age = age
+                )
+            )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                upgradeStudent(
-                    Dz6Student(
-                        id = idStudent,
-                        imageUrl = url,
-                        name = name,
-                        age = age.toInt()
-                    )
-                )
-            }, {
-                insertStudent(
-                    Dz6Student(
-                        id = System.currentTimeMillis().toString(),
-                        imageUrl = url,
-                        name = name,
-                        age = age.toInt()
-                    )
-                )
+                view?.end()
+            }, { throwable ->
+                view?.showError(throwable.message.toString())
             })
     }
 
     override fun upgradeStudent(id: String, name: String, age: Int, url: String) {
-        SupervisingStudents.upgradeStudentById(Student(id, name, age, url))
+        disposable = repository
+            .update(
+                Student(
+                    id = id,
+                    imageUrl = url,
+                    name = name,
+                    age = age
+                )
+            )
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                view?.end()
+            }, { throwable ->
+                view?.showError(throwable.message.toString())
+            })
     }
 
-    override fun getStudentById(id: String) {
-        disposable =
+    override fun getById(id: String) {
+        disposable = id.let { studentId ->
             repository
-                .getById(id)
+                .getById(studentId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ itStudent ->
-                    view?.goneProgressBar()
-                    view?.showStudent(itStudent)
+                .subscribe({ getById ->
+                    view?.showStudent(getById)
                 }, { throwable ->
-                    view?.goneProgressBar()
+                    view?.showError(throwable.message.toString())
                 })
+        }
     }
 }

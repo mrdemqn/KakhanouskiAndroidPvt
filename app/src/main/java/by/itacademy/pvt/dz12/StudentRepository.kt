@@ -6,15 +6,15 @@ import by.itacademy.pvt.dz6.Student
 
 interface StudentRepository {
 
-    fun get(pageSize: Int, offset: Int) : Observable<MutableList<Student>>
+    fun get(pageSize: Int, offset: Int): Observable<List<Student>>
 
-    fun getById(id: String) : Observable<Student>
+    fun getByName(name: String, pageSize: Int, offset: Int): Observable<List<Student>>
 
-    fun create(student: Student) : Completable
+    fun getById(id: String): Observable<Student>
 
-    fun upgrade(student: Student) : Completable
+    fun delete(id: String): Completable
 
-    fun delete(id: String) : Completable
+    fun create(student: Student): Completable
 
-    fun searchByName(name: String, pageSize: Int, offset: Int): Observable<MutableList<Student>>
+    fun update(student: Student): Completable
 }

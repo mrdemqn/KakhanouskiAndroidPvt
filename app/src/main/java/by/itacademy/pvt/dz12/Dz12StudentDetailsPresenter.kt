@@ -6,7 +6,7 @@ import by.itacademy.pvt.dz9.provideStudentRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class Dz12StudentDetailsPresenter(private val id: String) : Dz12DetailsPresenter {
+class Dz12StudentDetailsPresenter : Dz12DetailsPresenter {
 
     private var view: Dz12StudentDetailsView? = null
 
@@ -23,17 +23,16 @@ class Dz12StudentDetailsPresenter(private val id: String) : Dz12DetailsPresenter
         this.view = null
     }
 
-    override fun getStudentById(id: String) {
+    override fun getById(id: String) {
         disposable = repository
             .getById(id)
-            .subscribeOn(Schedulers.newThread())
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({itStudent ->
                 student = itStudent
                 view?.showStudent(student)
             }, { error ->
                 view?.showError(error.toString())
-                view?.back()
             })
     }
 
@@ -41,13 +40,12 @@ class Dz12StudentDetailsPresenter(private val id: String) : Dz12DetailsPresenter
         view?.showProgressBar()
         disposable = repository
             .delete(id)
-            .subscribeOn(Schedulers.newThread())
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 view?.end()
             }, { error ->
                 view?.showError(error.toString())
-                view?.back()
             })
     }
 }
