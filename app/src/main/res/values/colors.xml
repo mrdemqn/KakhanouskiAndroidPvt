@@ -47,5 +47,6 @@
     <color name="dz6BackgroundButton">#1A000000</color>
     <color name="backOpacitySearchEditText">#52FFFFFF</color>
     <color name="backOpacityEditText">#52FFFFFF</color>
+    <color name="progressBar">#09F51B</color>
 </resources>
 

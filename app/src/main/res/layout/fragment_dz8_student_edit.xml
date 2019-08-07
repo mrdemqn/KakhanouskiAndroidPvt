@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundDz6">
 
-    <LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/backgroundDz6"
@@ -53,6 +52,16 @@
                 android:imeOptions="actionDone"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/dz12ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/progressBar"
+            android:indeterminateTintMode="src_over"
+            android:visibility="visible" />
 
         <Button
             android:id="@+id/dz8SaveButton"

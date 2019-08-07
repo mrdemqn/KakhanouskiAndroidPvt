@@ -45,5 +45,6 @@
         <activity android:name="by.itacademy.pvt.dz9.Dz9MapsActivity" />
         <activity android:name="by.itacademy.pvt.dz11.mvp.Dz11Activity" />
         <activity android:name="by.itacademy.pvt.dz11.mvvp.Dz11MapsActivity" />
+        <activity android:name="by.itacademy.pvt.dz12.Dz12Activity" />
     </application>
 </manifest>

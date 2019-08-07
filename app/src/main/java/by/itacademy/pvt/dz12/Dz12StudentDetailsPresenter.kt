@@ -37,7 +37,6 @@ class Dz12StudentDetailsPresenter : Dz12DetailsPresenter {
     }
 
     override fun deleteById(id: String) {
-        view?.showProgressBar()
         disposable = repository
             .delete(id)
             .subscribeOn(Schedulers.io())

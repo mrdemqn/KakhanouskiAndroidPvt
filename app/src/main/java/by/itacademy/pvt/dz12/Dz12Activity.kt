@@ -11,7 +11,6 @@ import by.itacademy.pvt.R
 class Dz12Activity : FragmentActivity(), Dz12StudentEditFragment.Listener, Dz12StudentListFragment.Listener,
     Dz12StudentDetailsFragment.Listener {
 
-
     private var isTabletMode: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {

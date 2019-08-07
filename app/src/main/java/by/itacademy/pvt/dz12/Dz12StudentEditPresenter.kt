@@ -22,7 +22,7 @@ class Dz12StudentEditPresenter : Dz12EditPresenter {
         this.view = null
     }
 
-    override fun addNewStudent(url: String, name: String, age: Int) {
+    override fun addNewStudent(name: String, age: Int, url: String) {
         disposable = repository
             .create(
                 Student(
