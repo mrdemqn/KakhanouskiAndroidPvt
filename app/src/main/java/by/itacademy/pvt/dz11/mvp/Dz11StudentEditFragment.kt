@@ -63,7 +63,6 @@ class Dz11StudentEditFragment : Fragment(), Dz11StudentEditView {
 
         studentId = arguments?.getString(ID_KEY, null)
         studentId?.apply { editPresenter.getStudentById(this) }
-        val errorId = resources.getString(R.string.dz6_error_id)
 
         view.findViewById<View>(R.id.dz8SaveButton).setOnClickListener {
             saveUpgrate()

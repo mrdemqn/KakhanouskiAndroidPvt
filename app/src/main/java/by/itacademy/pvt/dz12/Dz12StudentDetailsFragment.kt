@@ -48,7 +48,6 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         detailsPresenter = Dz12StudentDetailsPresenter()
-        detailsPresenter.setView(this)
 
         val errorId = resources.getString(R.string.dz6_error_id)
 

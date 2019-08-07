@@ -1,5 +1,6 @@
 package by.itacademy.pvt.dz12
 
+import by.itacademy.pvt.dz6.Student
 import io.reactivex.Completable
 import io.reactivex.Observable
 

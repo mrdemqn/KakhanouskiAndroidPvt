@@ -48,8 +48,6 @@ class Dz11StudentDetailsFragment : Fragment(), Dz11StudentDetailsView {
         detailsPresenter = Dz11StudentDetailsPresenter()
         detailsPresenter.setView(this)
 
-        val errorId = resources.getString(R.string.dz6_error_id)
-
         studentId = arguments?.getString(ID_KEY)
 
         avatarImageView = view.findViewById(R.id.dz8AvatarImageView)
