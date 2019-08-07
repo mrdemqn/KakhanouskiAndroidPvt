@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import by.itacademy.pvt.R
 
-class Dz12Activity: FragmentActivity(), Dz12StudentEditFragment.Listener, Dz12StudentListFragment.Listener,
-Dz12StudentDetailsFragment.Listener {
+class Dz12Activity : FragmentActivity(), Dz12StudentEditFragment.Listener, Dz12StudentListFragment.Listener,
+    Dz12StudentDetailsFragment.Listener {
 
 
     private var isTabletMode: Boolean = false
@@ -54,6 +54,20 @@ Dz12StudentDetailsFragment.Listener {
         transaction.commit()
     }
 
+    override fun deleted() {
+        val transaction = supportFragmentManager.beginTransaction()
+
+        if (isTabletMode) {
+            (supportFragmentManager.findFragmentByTag(Dz12StudentListFragment.TAG) as? Dz12StudentListFragment)?.updateListRecycle()
+            supportFragmentManager.findFragmentByTag(Dz12StudentDetailsFragment.TAG)?.apply { transaction.remove(this) }
+            transaction.replace(R.id.dz8Conteiner2, Fragment())
+        } else {
+            supportFragmentManager.popBackStack()
+        }
+
+        transaction.commit()
+    }
+
     override fun onStudentClicked(id: String) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(choiseOrientation, Dz12StudentDetailsFragment.getInstance(id))
@@ -68,23 +82,7 @@ Dz12StudentDetailsFragment.Listener {
         transaction.commit()
     }
 
-//    override fun onClickedDeleteStudent() {
-//        val transaction = supportFragmentManager.beginTransaction()
-//
-//        (supportFragmentManager.findFragmentByTag(Dz12StudentListFragment.TAG) as? Dz12StudentListFragment)
-//            ?.updateListRecycle()
-//
-//        if (isTabletMode) {
-//            supportFragmentManager.findFragmentByTag(Dz12StudentDetailsFragment.TAG)
-//                ?.apply { transaction.remove(this) }
-//            transaction.replace(R.id.dz8Conteiner2, Fragment())
-//        } else {
-//            supportFragmentManager.popBackStack()
-//        }
-//        transaction.commit()
-//    }
-
-    override fun completeFragmentWithAnError() {
+    override fun completeFragmentWithAnError(error: String) {
         Toast.makeText(this, "Student nou found", Toast.LENGTH_SHORT).show()
         val transaction = supportFragmentManager.beginTransaction()
         if (isTabletMode) {
