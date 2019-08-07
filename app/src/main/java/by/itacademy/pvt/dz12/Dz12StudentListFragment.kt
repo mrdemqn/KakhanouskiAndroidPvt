@@ -63,8 +63,6 @@ class Dz12StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz12St
         listPresenter = Dz12StudentListPresenter()
         listPresenter.setView(this)
 
-
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.dz6StListRecycleView)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(view.context)

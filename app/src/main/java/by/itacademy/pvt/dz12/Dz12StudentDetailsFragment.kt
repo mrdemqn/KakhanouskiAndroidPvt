@@ -7,7 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
+import by.itacademy.pvt.dz11.mvp.Dz11StudentDetailsFragment
+import by.itacademy.pvt.dz11.mvp.Dz12DetailsPresenter
 import by.itacademy.pvt.dz6.Student
 import by.itacademy.pvt.utils.loadCircleImage
 
@@ -23,7 +29,6 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
     private lateinit var nameTextView: TextView
     private lateinit var ageTextView: TextView
     private lateinit var progressBar: ProgressBar
-    private lateinit var studentDetails: ScrollView
     private val errorId = resources.getString(R.string.dz6_error_id)
 
     companion object {
@@ -45,12 +50,6 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-
-        val studentId = arguments?.getString(ID_KEY, null)
-
-        detailsPresenter = Dz12StudentDetailsPresenter()
-        detailsPresenter.setView(this)
-
         avatarImageView = view.findViewById(R.id.dz8AvatarImageView)
         nameTextView = view.findViewById(R.id.dz8NameTextView)
         ageTextView = view.findViewById(R.id.dz8AgeTextView)
@@ -70,9 +69,7 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
             }
         }
     }
-
-
-
+          
     override fun showStudent(student: Student?) {
         progressBar.visibility = View.GONE
         if (student == null) {

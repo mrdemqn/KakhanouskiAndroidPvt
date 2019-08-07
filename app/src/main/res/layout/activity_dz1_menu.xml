@@ -91,4 +91,5 @@
         style="@style/MenuNavigationTextView"
         android:layout_toEndOf="@+id/dzSixSovaButton"
         android:text="@string/dz12_activity" />
+
 </RelativeLayout>

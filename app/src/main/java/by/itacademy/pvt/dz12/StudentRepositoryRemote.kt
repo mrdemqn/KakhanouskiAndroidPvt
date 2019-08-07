@@ -17,11 +17,11 @@ class StudentRepositoryRemote(private val studentApi: StudentApi): StudentReposi
     override fun getById(id: String): Observable<Student> {
         return studentApi.getById(id)
     }
-
+  
     override fun delete(id: String): Completable {
         return studentApi.delete(id)
     }
-
+  
     override fun create(student: Student): Completable {
         return studentApi.create(student)
     }

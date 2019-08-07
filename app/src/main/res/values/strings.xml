@@ -58,4 +58,7 @@
     <string name="dz11activity_mpv">ДЗ№11MPV</string>
     <string name="dz11activity_mvvp">ДЗ№11MVVP</string>
     <string name="dz12_activity">ДЗ№12</string>
+    <string name="timer_activity">Timer</string>
+    <string name="timer_0_hint">Timer 0… - </string>
+    <string name="timer123">Timer 0… - </string>
 </resources>

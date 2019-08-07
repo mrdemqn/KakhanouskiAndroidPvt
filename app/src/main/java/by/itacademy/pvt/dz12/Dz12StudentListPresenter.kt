@@ -15,7 +15,7 @@ class Dz12StudentListPresenter : Dz12ListPresenter {
     private val listStudents: MutableList<Student> = mutableListOf()
     private var disposable: Disposable? = null
     private var searchText: String = ""
-
+  
     override fun setView(view: Dz12BaseView) {
         this.view = view as Dz12StudentListView
     }

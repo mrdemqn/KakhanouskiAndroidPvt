@@ -12,7 +12,6 @@ class Dz12StudentEditPresenter : Dz12EditPresenter {
 
     private val repository = provideStudentRepository()
     private var disposable: Disposable? = null
-
     override fun setView(view: Dz12BaseView) {
         this.view = view as Dz12StudentEditView
     }
