@@ -34,7 +34,7 @@ class Dz6StudentDetailsActivity : Activity() {
         val avatarImageView = findViewById<ImageView>(R.id.dz8AvatarImageView)
 
         if (student != null) {
-            loadCircleImage(this@Dz6StudentDetailsActivity, student.imageUrl, avatarImageView)
+            loadCircleImage(student.imageUrl, avatarImageView)
             findViewById<TextView>(R.id.dz8NameTextView).text = student.name
             findViewById<TextView>(R.id.dz8AgeTextView).text = student.age.toString()
         }
