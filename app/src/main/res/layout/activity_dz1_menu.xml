@@ -87,8 +87,9 @@
         android:text="@string/dz11activity_mvvp" />
 
     <TextView
-        android:id="@+id/dzTimer"
+        android:id="@+id/dz12Button"
         style="@style/MenuNavigationTextView"
         android:layout_toEndOf="@+id/dzSixSovaButton"
-        android:text="@string/timer_activity" />
+        android:text="@string/dz12_activity" />
+
 </RelativeLayout>

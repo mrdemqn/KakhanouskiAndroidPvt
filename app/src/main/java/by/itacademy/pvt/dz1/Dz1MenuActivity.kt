@@ -13,6 +13,8 @@ import by.itacademy.pvt.dz5.Dz5Activity
 import by.itacademy.pvt.dz5.dz5_sova.Dz5SovaActivity
 import by.itacademy.pvt.dz6.Dz6StudentListActivity
 import by.itacademy.pvt.dz11.mvp.Dz11Activity
+import by.itacademy.pvt.dz11.mvvp.Dz11MapsActivity
+import by.itacademy.pvt.dz12.Dz12Activity
 import by.itacademy.pvt.dz11.mvvm.Dz11MapsActivity
 import by.itacademy.pvt.dz11.mvvm.timer.TimerActivity
 import by.itacademy.pvt.dz8.Dz8Activity
@@ -73,9 +75,15 @@ class Dz1MenuActivity : Activity() {
             .setOnClickListener {
                 viewDz11MVVP()
             }
+
+        findViewById<View>(R.id.dz12Button)
+            .setOnClickListener {
+                viewDz12()
+
         findViewById<View>(R.id.dzTimer)
             .setOnClickListener {
                 viewDzTimer()
+
             }
     }
 
@@ -140,8 +148,13 @@ class Dz1MenuActivity : Activity() {
         startActivity(intent)
     }
 
+    private fun viewDz12() {
+        val intent = Intent(this, Dz12Activity::class.java)
+    }
+      
     private fun viewDzTimer() {
         val intent = Intent(this, TimerActivity::class.java)
+
         startActivity(intent)
     }
 }

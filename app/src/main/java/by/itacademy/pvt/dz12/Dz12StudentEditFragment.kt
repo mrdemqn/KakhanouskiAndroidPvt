@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.URLUtil
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.itacademy.pvt.R
@@ -29,6 +30,8 @@ class Dz12StudentEditFragment : Fragment(), Dz12StudentEditView {
     private lateinit var urlLinearLayout: TextInputLayout
     private lateinit var nameLinearLayout: TextInputLayout
     private lateinit var ageLinearLayout: TextInputLayout
+
+    private lateinit var progressBar: ProgressBar
 
     companion object {
         val TAG = Dz12StudentEditFragment::class.java.canonicalName!!
@@ -62,15 +65,18 @@ class Dz12StudentEditFragment : Fragment(), Dz12StudentEditView {
         ageLinearLayout = view.findViewById(R.id.dz8AgeLinearLayout)
 
         studentId = arguments?.getString(ID_KEY, null)
-        studentId?.apply { editPresenter.getStudentById(this) }
+        studentId?.apply {
+            progressBar.visibility = View.VISIBLE
+            editPresenter.getById(this) }
         val errorId = resources.getString(R.string.dz6_error_id)
 
         view.findViewById<View>(R.id.dz8SaveButton).setOnClickListener {
-            saveUpgrate()
+            saveUpgrade()
         }
     }
 
     override fun showStudent(student: Student?) {
+        progressBar.visibility = View.GONE
         if (student != null) {
             Toast.makeText(context, "Student not found", Toast.LENGTH_SHORT).show()
         } else {
@@ -80,7 +86,7 @@ class Dz12StudentEditFragment : Fragment(), Dz12StudentEditView {
         }
     }
 
-    fun saveUpgrate() {
+    fun saveUpgrade() {
         val errorCannotBeBlank = resources.getString(R.string.dz6_error_cannot_be_blank)
         val errorUrlIsInvalid = resources.getString(R.string.dz6_error_url_is_invalid)
 
@@ -121,11 +127,21 @@ class Dz12StudentEditFragment : Fragment(), Dz12StudentEditView {
         }
 
         if (studentId == null) {
+            progressBar.visibility = View.VISIBLE
             editPresenter.addNewStudent(name, age!!, url)
         } else {
+            progressBar.visibility = View.VISIBLE
             editPresenter.upgradeStudent(studentId!!, name, age!!, url)
         }
+    }
+
+    override fun end() {
         listener?.onClickedSaveStudent()
+    }
+
+    override fun showError(error: String) {
+        progressBar.visibility = View.GONE
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
     override fun onAttach(context: Context) {

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import androidx.fragment.app.Fragment
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -23,17 +25,17 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
 
     private lateinit var detailsPresenter: Dz12DetailsPresenter
 
-    private var studentId: String? = null
-
     private lateinit var avatarImageView: ImageView
     private lateinit var nameTextView: TextView
     private lateinit var ageTextView: TextView
+    private lateinit var progressBar: ProgressBar
+    private val errorId = resources.getString(R.string.dz6_error_id)
 
     companion object {
-        val TAG  = Dz11StudentDetailsFragment::class.java.canonicalName!!
+        val TAG  = Dz12StudentDetailsFragment::class.java.canonicalName!!
 
-        fun getInstance(id: String): Dz11StudentDetailsFragment {
-            val fragment = Dz11StudentDetailsFragment()
+        fun getInstance(id: String): Dz12StudentDetailsFragment {
+            val fragment = Dz12StudentDetailsFragment()
 
             val bundle = Bundle()
             bundle.putString(ID_KEY, id)
@@ -47,22 +49,17 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        detailsPresenter = Dz12StudentDetailsPresenter()
-
-        val errorId = resources.getString(R.string.dz6_error_id)
-
-        studentId = arguments?.getString(ID_KEY)
 
         avatarImageView = view.findViewById(R.id.dz8AvatarImageView)
         nameTextView = view.findViewById(R.id.dz8NameTextView)
         ageTextView = view.findViewById(R.id.dz8AgeTextView)
 
-        studentId?.apply { detailsPresenter.getStudentById(this) }
+        studentId?.apply { detailsPresenter.getById(this) }
 
         view.findViewById<Button>(R.id.dz8deleteButton).setOnClickListener {
             studentId?.apply {
+                progressBar.visibility = View.VISIBLE
                 detailsPresenter.deleteById(this)
-                listener?.onClickedDeleteStudent()
             }
         }
 
@@ -72,14 +69,15 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
             }
         }
     }
-
+          
     override fun showStudent(student: Student?) {
+        progressBar.visibility = View.GONE
         if (student == null) {
-            listener?.completeFragmentWithAnError()
+           showError(errorId)
         } else {
-            context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
+            context?.let { loadCircleImage(student.imageUrl, avatarImageView) }
             ageTextView.text = student.age.toString()
-            nameTextView.text = student.name
+            nameTextView.text= student.name
         }
     }
 
@@ -91,8 +89,8 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
     }
 
     override fun onDetach() {
-        super.onDetach()
         listener = null
+        super.onDetach()
     }
 
     override fun onDestroyView() {
@@ -100,9 +98,17 @@ class Dz12StudentDetailsFragment : Fragment(), Dz12StudentDetailsView {
         super.onDestroyView()
     }
 
+    override fun end() {
+        listener?.deleted()
+    }
+
+    override fun showError(error: String) {
+        listener?.completeFragmentWithAnError(error)
+    }
+
     interface Listener {
+        fun deleted()
         fun onClickedStudentEdit(id: String)
-        fun onClickedDeleteStudent()
-        fun completeFragmentWithAnError()
+        fun completeFragmentWithAnError(error: String)
     }
 }

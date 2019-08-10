@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +24,7 @@ import kotlin.concurrent.schedule
 
 private const val ID_KEY = "ID_KEY"
 
-class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz12StudentListView {
+class Dz12StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz12StudentListView {
 
     private var listener: Listener? = null
 
@@ -32,12 +34,13 @@ class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz12St
     private lateinit var dz8EditText: EditText
     private lateinit var sharPrefManager: AppPrefManager
     private lateinit var listPresenter: Dz12ListPresenter
+    private lateinit var progressBar: ProgressBar
 
     companion object {
-        val TAG = Dz11StudentListFragment::class.java.canonicalName!!
+        val TAG = Dz12StudentListFragment::class.java.canonicalName!!
 
-        fun getInstance(id: String? = null): Dz11StudentListFragment {
-            val fragment = Dz11StudentListFragment()
+        fun getInstance(id: String? = null): Dz12StudentListFragment {
+            val fragment = Dz12StudentListFragment()
 
             if (id != null) {
                 val bundle = Bundle()
@@ -94,12 +97,12 @@ class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz12St
         listPresenter.getStudentList()
     }
 
-    override fun showSearchResults(list: List<Student>) {
-        adapterDz8List.updateList(list)
+    override fun showSearchResults(listStudent: MutableList<Student>) {
+        adapterDz8List.updateList(listStudent)
     }
 
-    override fun showStudentsList(list: List<Student>) {
-        adapterDz8List.updateList(list)
+    override fun showStudentsList(listStudent: MutableList<Student>) {
+        adapterDz8List.updateList(listStudent)
     }
 
     override fun onStart() {
@@ -127,6 +130,11 @@ class Dz11StudentListFragment : Fragment(), Dz6ListAdapter.ClickListener, Dz12St
 
     override fun onStudentClick(item: Student) {
         listener?.onStudentClicked(item.id)
+    }
+
+    override fun showError(error: String) {
+        progressBar.visibility = View.GONE
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
     override fun onResume() {

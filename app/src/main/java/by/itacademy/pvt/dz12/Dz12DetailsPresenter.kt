@@ -1,6 +1,6 @@
-package by.itacademy.pvt.dz11.mvp
 
-interface Dz12DetailsPresenter : Dz11BasePresenter {
-    fun getStudentById(id: String)
-    fun deleteById(id: String)
+package by.itacademy.pvt.dz12
+
+interface Dz12DetailsPresenter : Dz12BasePresenter {
+    fun getById(id: String)
 }
