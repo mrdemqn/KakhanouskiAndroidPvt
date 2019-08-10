@@ -74,7 +74,7 @@ class Dz11StudentDetailsFragment : Fragment(), Dz11StudentDetailsView {
         if (student == null) {
             listener?.completeFragmentWithAnError()
         } else {
-            context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
+            context?.let { loadCircleImage(student.imageUrl, avatarImageView) }
             ageTextView.text = student.age.toString()
             nameTextView.text = student.name
         }

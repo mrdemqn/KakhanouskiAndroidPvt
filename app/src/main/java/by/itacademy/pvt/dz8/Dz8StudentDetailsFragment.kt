@@ -46,7 +46,7 @@ class Dz8StudentDetailsFragment : Fragment() {
         val avatarImageView = view.findViewById<ImageView>(R.id.dz8AvatarImageView)
 
         if (student != null) {
-            context?.let { loadCircleImage(it, student.imageUrl, avatarImageView) }
+            context?.let { loadCircleImage(student.imageUrl, avatarImageView) }
             view.findViewById<TextView>(R.id.dz8NameTextView).text = student.name
             view.findViewById<TextView>(R.id.dz8AgeTextView).text = student.age.toString()
         }

@@ -12,7 +12,7 @@ class Dz6ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val textView = view.findViewById<TextView>(R.id.dz6ItemTextView)
 
     fun bind(item: Student) {
-        loadCircleImage(itemView.context, item.imageUrl, imageView)
+        loadCircleImage(item.imageUrl, imageView)
         textView.text = item.name
     }
 }
